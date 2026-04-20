@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/测试场景-16-green" />
+  <img src="https://img.shields.io/badge/测试场景-17-green" />
   <img src="https://img.shields.io/badge/质量维度-12-blue" />
-  <img src="https://img.shields.io/badge/使用牛刀-82%25通过率-brightgreen" />
-  <img src="https://img.shields.io/badge/未使用-34%25通过率-lightgrey" />
+  <img src="https://img.shields.io/badge/使用牛刀-84%25通过率-brightgreen" />
+  <img src="https://img.shields.io/badge/未使用-32%25通过率-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
@@ -52,15 +52,15 @@ Vibe coding 很强大，但大多数人**写不出好 prompt**。要么太模糊
 
 ## 效果验证
 
-### 16 场景整体对比
+### 17 场景整体对比
 
-16 个测试场景，评估最多 12 个质量维度。绿色条 = 使用牛刀（已有场景），橙色 = 使用牛刀（新增场景），灰色 = 不使用。
+17 个测试场景，评估最多 12 个质量维度。绿色条 = 使用牛刀（已有场景），橙色 = 使用牛刀（新增场景），灰色 = 不使用。
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **关键数据：**
-- 使用牛刀平均通过率 **82%**，不使用 **34%**，提升 **+48 个百分点**
-- 3 个新增场景使用牛刀均达到 **100%**（Landing Page、Web App、Remix）
+- 使用牛刀平均通过率 **84%**，不使用 **32%**，提升 **+52 个百分点**
+- 3 个新增场景使用牛刀均达到 **100%**（Landing Page、Web App、Remix），Linear 重验也达到 **100%**
 - 最大提升：CLI Tool（+78pp）、Design System / Landing Page / Web App（+67pp）
 
 > 方法论：每个场景分别在有/无技能下运行，由 Claude 按 12 维度评分标准打分，
@@ -74,14 +74,14 @@ Vibe coding 很强大，但大多数人**写不出好 prompt**。要么太模糊
 
 | 维度 | 使用牛刀 | 不使用 | 差距 |
 |------|-------------|--------|------|
-| Why Annotations（教学注释） | 15/16 (94%) | 0/16 (0%) | **+94pp** |
-| Not-To-Do（范围控制） | 16/16 (100%) | 6/16 (38%) | **+63pp** |
-| Done Criteria（完成标准） | 8/16 (50%) | 0/16 (0%) | **+50pp** |
-| Pro Tips（实战洞察） | 12/16 (75%) | 3/16 (19%) | **+56pp** |
-| Build Order（构建顺序） | 10/16 (63%) | 1/16 (6%) | **+56pp** |
-| Soul Capture（灵魂捕捉） | 16/16 (100%) | 7/16 (44%) | **+56pp** |
-| 目的地而非路线 * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
-| 使用建议 * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+| Why Annotations（教学注释） | 16/17 (94%) | 0/17 (0%) | **+94pp** |
+| Not-To-Do（范围控制） | 17/17 (100%) | 6/17 (35%) | **+65pp** |
+| Done Criteria（完成标准） | 9/17 (53%) | 0/17 (0%) | **+53pp** |
+| Pro Tips（实战洞察） | 13/17 (76%) | 3/17 (18%) | **+59pp** |
+| Build Order（构建顺序） | 11/17 (65%) | 1/17 (6%) | **+59pp** |
+| Soul Capture（灵魂捕捉） | 17/17 (100%) | 7/17 (41%) | **+59pp** |
+| 目的地而非路线 * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
+| 使用建议 * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
 
 *\* 新增维度，在 3 个额外场景中测试*
 

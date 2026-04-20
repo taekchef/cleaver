@@ -22,6 +22,7 @@ LABELS = {
     "eval-landing-page": "Landing Page",
     "eval-web-app": "Web App",
     "eval-remix": "Remix",
+    "eval-linear": "Linear (Re-eval)",
 }
 
 # Dimension short names (first 9 are old, last 3 are new)

@@ -5,7 +5,7 @@
     "date": "2026-04-20",
     "methodology": "Each scenario run with/without skill active, graded by Claude against 12-dimension rubric",
     "grader": "claude-sonnet",
-    "scenarios_count": 16,
+    "scenarios_count": 17,
     "old_dimensions": 9,
     "new_dimensions": 12,
     "note": "First 13 scenarios (iteration-4) tested on 9 dimensions. Last 3 (iteration-5) tested on all 12."
@@ -250,127 +250,142 @@
         "total": 12,
         "pass_rate": 0.33
       }
+    },
+    "eval-linear": {
+      "label": "Linear (Re-eval)",
+      "iteration": 6,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 1,
+        "total": 12,
+        "pass_rate": 0.08
+      }
     }
   },
   "dimensions": {
     "Product Analysis": {
       "with_skill": {
-        "passed": 14,
-        "total": 16
+        "passed": 15,
+        "total": 17
       },
       "without_skill": {
-        "passed": 16,
-        "total": 16
+        "passed": 17,
+        "total": 17
       }
     },
     "Multiple Prompts": {
       "with_skill": {
-        "passed": 15,
-        "total": 16
+        "passed": 16,
+        "total": 17
       },
       "without_skill": {
         "passed": 10,
-        "total": 16
+        "total": 17
       }
     },
     "Done Criteria": {
       "with_skill": {
-        "passed": 8,
-        "total": 16
+        "passed": 9,
+        "total": 17
       },
       "without_skill": {
         "passed": 0,
-        "total": 16
+        "total": 17
       }
     },
     "Why Annotations": {
       "with_skill": {
-        "passed": 15,
-        "total": 16
+        "passed": 16,
+        "total": 17
       },
       "without_skill": {
         "passed": 0,
-        "total": 16
+        "total": 17
       }
     },
     "Pro Tips": {
       "with_skill": {
-        "passed": 12,
-        "total": 16
+        "passed": 13,
+        "total": 17
       },
       "without_skill": {
         "passed": 3,
-        "total": 16
+        "total": 17
       }
     },
     "Build Order": {
       "with_skill": {
-        "passed": 10,
-        "total": 16
+        "passed": 11,
+        "total": 17
       },
       "without_skill": {
         "passed": 1,
-        "total": 16
+        "total": 17
       }
     },
     "Domain Framework": {
       "with_skill": {
-        "passed": 11,
-        "total": 16
+        "passed": 12,
+        "total": 17
       },
       "without_skill": {
         "passed": 6,
-        "total": 16
+        "total": 17
       }
     },
     "Not-To-Do": {
       "with_skill": {
-        "passed": 16,
-        "total": 16
+        "passed": 17,
+        "total": 17
       },
       "without_skill": {
         "passed": 6,
-        "total": 16
+        "total": 17
       }
     },
     "Soul Capture": {
       "with_skill": {
-        "passed": 16,
-        "total": 16
+        "passed": 17,
+        "total": 17
       },
       "without_skill": {
         "passed": 7,
-        "total": 16
+        "total": 17
       }
     },
     "Destination Not Route": {
       "with_skill": {
-        "passed": 3,
-        "total": 3
+        "passed": 4,
+        "total": 4
       },
       "without_skill": {
         "passed": 0,
-        "total": 3
+        "total": 4
       }
     },
     "Prompts Standalone": {
       "with_skill": {
-        "passed": 3,
-        "total": 3
+        "passed": 4,
+        "total": 4
       },
       "without_skill": {
         "passed": 3,
-        "total": 3
+        "total": 4
       }
     },
     "Usage Guidance": {
       "with_skill": {
-        "passed": 3,
-        "total": 3
+        "passed": 4,
+        "total": 4
       },
       "without_skill": {
         "passed": 0,
-        "total": 3
+        "total": 4
       }
     }
   },
@@ -1998,6 +2013,108 @@
           "text": "包含 prompt 使用建议",
           "passed": false,
           "evidence": "无使用建议"
+        }
+      ]
+    },
+    "eval-linear": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": false
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false
         }
       ]
     }

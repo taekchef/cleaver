@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tested-16_scenarios-green" />
+  <img src="https://img.shields.io/badge/tested-17_scenarios-green" />
   <img src="https://img.shields.io/badge/dimensions-12-blue" />
-  <img src="https://img.shields.io/badge/with_Cleaver-82%25_pass_rate-brightgreen" />
-  <img src="https://img.shields.io/badge/without-34%25_pass_rate-lightgrey" />
+  <img src="https://img.shields.io/badge/with_Cleaver-84%25_pass_rate-brightgreen" />
+  <img src="https://img.shields.io/badge/without-32%25_pass_rate-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
@@ -53,15 +53,15 @@ Cleaver:
 
 ## Proof it works
 
-### 16-Scenario Benchmark
+### 17-Scenario Benchmark
 
-16 test scenarios, graded on up to 12 quality dimensions. Green = with Cleaver, Orange = with Cleaver (new scenarios), Gray = without.
+17 test scenarios, graded on up to 12 quality dimensions. Green = with Cleaver, Orange = with Cleaver (new scenarios), Gray = without.
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **Key numbers:**
-- With Cleaver: **82%** average pass rate | Without: **34%** | **+48pp improvement**
-- 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix)
+- With Cleaver: **84%** average pass rate | Without: **32%** | **+52pp improvement**
+- 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix), Linear re-eval also **100%**
 - Biggest gains: CLI Tool (+78pp), Design System (+67pp), Landing Page / Web App (+67pp)
 
 > Methodology: each scenario was run with and without the skill active, graded by Claude against
@@ -75,14 +75,14 @@ Cleaver:
 
 | Dimension | With Cleaver | Without | Gap |
 |-----------|-------------|---------|-----|
-| Why Annotations (teaching) | 15/16 (94%) | 0/16 (0%) | **+94pp** |
-| Not-To-Do (scope control) | 16/16 (100%) | 6/16 (38%) | **+63pp** |
-| Done Criteria (acceptance) | 8/16 (50%) | 0/16 (0%) | **+50pp** |
-| Pro Tips (practical insight) | 12/16 (75%) | 3/16 (19%) | **+56pp** |
-| Build Order (sequencing) | 10/16 (63%) | 1/16 (6%) | **+56pp** |
-| Soul Capture (core identity) | 16/16 (100%) | 7/16 (44%) | **+56pp** |
-| Destination Not Route * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
-| Usage Guidance * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+| Why Annotations (teaching) | 16/17 (94%) | 0/17 (0%) | **+94pp** |
+| Not-To-Do (scope control) | 17/17 (100%) | 6/17 (35%) | **+65pp** |
+| Done Criteria (acceptance) | 9/17 (53%) | 0/17 (0%) | **+53pp** |
+| Pro Tips (practical insight) | 13/17 (76%) | 3/17 (18%) | **+59pp** |
+| Build Order (sequencing) | 11/17 (65%) | 1/17 (6%) | **+59pp** |
+| Soul Capture (core identity) | 17/17 (100%) | 7/17 (41%) | **+59pp** |
+| Destination Not Route * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
+| Usage Guidance * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
 
 *\* New dimensions, tested on 3 additional scenarios*
 
@@ -199,7 +199,7 @@ cleaver/
 │   ├── rubric.md               # 12-dimension scoring criteria
 │   └── build_benchmark.py      # Reads grading JSONs, outputs benchmark.json
 ├── docs/
-│   ├── benchmark.svg           # 16-scenario comparison chart
+│   ├── benchmark.svg           # 17-scenario comparison chart
 │   ├── dimensions.svg          # 12-dimension coverage chart
 │   └── generate_charts.py      # Reads benchmark.json → generates SVGs
 ├── references/
