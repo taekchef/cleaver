@@ -1,6 +1,6 @@
 <h1 align="center">Cleaver <sup><code>牛刀</code></sup></h1>
 
-<p align="center"><strong>Take any product, extract source-aware prompts that could rebuild its essential decisions.</strong></p>
+<p align="center"><strong>Take any product, cleave it into the prompts that built it.</strong></p>
 
 <p align="center">
   A <a href="https://docs.anthropic.com/en/docs/claude-code/skills">Claude Code skill</a> that reverse-engineers products into actionable prompts for vibe coding, PRDs, design briefs, and service blueprints.

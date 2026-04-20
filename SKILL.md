@@ -11,7 +11,7 @@ description: >
 
 # Cleaver / 牛刀
 
-Take any finished product, extract the prompts that could rebuild its essential decisions.
+Take any finished product, cleave it into the prompts that built it.
 
 Output can be code prompts (vibe coding), PRD prompts, design briefs, or service blueprints —
 whatever the user needs. You're not just writing prompts — you're teaching the user how to think
