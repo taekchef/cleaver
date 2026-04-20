@@ -79,140 +79,67 @@ Tell the user which path you're taking and why. Let them override your choice.
 
 ### Phase 1: Understand what the user brought you
 
-First, figure out what you're working with. Each input type has its own analysis approach — don't
-treat them all the same.
+Figure out what you're working with. Each input type needs a different lens — don't treat them all
+the same. For detailed domain-specific analysis, read `references/domain-strategies.md`.
 
-**Screenshot / image:**
-Look at it like a designer doing a critique. Note:
-- Overall layout grid (columns, rows, sections, card structure)
-- Visual hierarchy — what draws the eye first? second? third?
-- Component inventory (buttons, forms, cards, modals, nav, tabs, tooltips...)
-- Typography: how many sizes/weights? headings vs body vs captions?
-- Color: how many distinct colors? what's primary/secondary/accent? dark or light mode?
-- Spacing rhythm: tight/dense vs airy/generous?
-- Interaction hints: hoverable things, scrollable areas, toggles, drag handles
-- Responsive clues: does it look mobile-first or desktop-first?
+**Screenshot / image** — Think like a designer doing a critique. Focus on: visual hierarchy (what
+draws the eye first), component inventory, typography scale, color palette, spacing rhythm, and
+interaction hints. Note mobile vs desktop clues.
 
-**URL / live website:**
-Fetch the page and study it systematically:
-- Information architecture: what sections exist, in what order?
-- Navigation model: sidebar? top nav? tabs? breadcrumbs?
-- Key interactions: forms, filters, drag-drop, infinite scroll, modals?
-- Responsive behavior: resize or check mobile — how does the layout adapt?
-- Loading patterns: skeletons, spinners, progressive reveal?
-- Also grab the tech stack if visible (view source, framework hints in class names, meta tags)
+**URL / live website** — Fetch and study: information architecture, navigation model, key
+interactions, responsive behavior, loading patterns. Grab tech stack clues from source.
 
-**Code / repo:**
-Read strategically, not cover-to-cover:
-- Start with README, package.json / Cargo.toml / go.mod — understand the what and the stack
-- Find the entry point (main.rs, index.ts, app.py) and trace the architecture
-- Identify the core data model — what are the main entities?
-- Look at the directory structure — how is responsibility divided?
-- Check for config files — what's configurable? what decisions were left to the user?
-- Read tests — they reveal what the author considered important behavior
+**Code / repo** — Read strategically: README → entry point → data model → directory structure →
+config files → tests. Tests reveal what the author considered important.
 
-**Design file (Figma, Sketch):**
-Think in systems:
-- Component hierarchy: atoms → molecules → organisms → templates → pages
-- Design tokens: spacing scale, color palette, type scale, border radii, shadows
-- Repeating patterns: what components are reused? what varies?
-- State variations: hover, active, disabled, loading, empty, error
-- Responsive breakpoints: how does the layout shift?
+**Verbal description** — "I saw this thing that did X..." Extract the core idea, then probe for
+what specifically caught their attention and what they'd change.
 
-**Verbal description:**
-"I saw this thing that did X..." — extract the core idea, then probe:
-- What specifically caught your attention? The interaction? The layout? The feel?
-- Where did you see it? (helps you look it up if needed)
-- What would you change about it? (reveals what they actually care about)
+**Design file (Figma, Sketch)** — Think in systems: component hierarchy (atoms → organisms),
+design tokens, repeating patterns, state variations, breakpoints.
 
-**A specific feature / interaction:**
-"The way Spotify crossfades between songs" — isolate the mechanism:
-- What triggers it? What changes? What's the transition?
-- What's the user experiencing vs what's happening technically?
-- Is it the behavior itself or the polish (timing, easing, feedback)?
+**A specific feature / interaction** — Isolate the mechanism: trigger → change → transition.
+Separate user experience from technical implementation.
 
-**A game / interactive experience:**
-Games require working backwards from the player experience using the MDA framework:
-- Core loop: what's the minute-to-minute action cycle? (explore → fight → loot → upgrade → repeat)
-- What makes it fun? What emotion does it target? (challenge, discovery, fellowship, sensation)
-- Progression: what grows over time? (stats, levels, unlocks, prestige layers)
-- Game feel: what makes actions satisfying? (screen shake, particles, hit-stop, sound)
-- Balance: what are the key numbers? (HP, damage, costs, probabilities)
-- Session design: how long is a typical session? how does it start and end?
-- Monetization: how does it make money? how does this affect the design?
+**A game** — Work backwards from player experience via MDA framework: core loop, target emotions,
+progression, game feel (juice), balance numbers, session design.
 
-**An AI product (chatbot, code assistant, image generator, etc.):**
-The invisible layer IS the product — focus on what you can't see:
-- System prompt: what persona, tools, and rules define the AI's behavior?
-- Context pipeline: what data flows into the prompt? (RAG, memory, search, files)
-- Model strategy: single model? tiered routing? fine-tuned? custom?
-- Tool/function calls: what can the AI actually do? (JSON schemas reveal capabilities)
-- Guardrails: what does it refuse? how consistent are refusals?
-- Latency: how fast is the first token? does it stream?
-- Output quality: does it cite sources? does it hallucinate? how does it handle uncertainty?
+**An AI product** — The invisible layer IS the product: system prompt architecture, context
+pipeline (RAG/memory/search), model strategy, tool definitions, guardrails, output quality.
 
-**Physical product (phone, appliance, vehicle, etc.):**
-Study it from a user's perspective — you can't read its source code, so observe behavior:
-- First impression: what does it feel like to unbox / see / hold?
-- Core interaction loop: what does the user do most often? how does it respond?
-- Sensory profile: visual, tactile, auditory, olfactory — what stands out?
-- Material and build language: premium? utilitarian? playful? minimal?
-- Interface points: buttons, screens, LEDs, sounds, haptics — how does it communicate?
-- User journey: purchase → unboxing → setup → daily use → maintenance → end of life
-- What makes it feel "well-designed" vs "cheap"? What's the intangible quality?
-- If it has a digital companion (app, dashboard) — how do physical and digital connect?
+**A physical product** — User's perspective: first impression, core interaction loop, sensory
+profile, materials, interface points (buttons/screens/haptics), user journey, intangible quality.
 
 Don't rush this. Misunderstanding the product = garbage prompts.
 
 ### Phase 2: Understand what the user wants
 
-Before you start deconstructing, ask:
+Before deconstructing, figure out the user's intent. **Don't ask all 5 questions by default** —
+infer what you can from context and only ask what you can't determine. A user saying "拆解 Stripe"
+in Claude Code probably wants actionable code prompts. A user saying "我想学习 prompt engineering"
+wants learning material. Skip the obvious.
 
-1. **Purpose** — "What do you want to do with these prompts?"
-   - Learn vibe coding techniques? → bias toward educational annotations
-   - Actually recreate this thing? → bias toward actionable, copy-paste-ready prompts
-   - Remix it into something new? → identify the core patterns and make them modular
+Only ask when ambiguous:
 
-2. **Output type** — "What do you want these prompts to produce?"
-   - **Code / working software** → standard vibe coding prompts (default)
-   - **PRD / product spec** → prompts that generate product requirement documents
-   - **Design brief** → prompts for industrial designers, UI/UX specs
-   - **Service blueprint** → prompts for process/service design
-   - **Learning material** → prompts that teach through deconstruction
-   - **Not sure** → default to code, offer to switch if the project doesn't fit
+1. **Purpose** — Learn? Recreate? Remix? If they said "30分钟搞出原型" that's Fast Track recreate.
+   If they said "教我怎么写 prompt" that's learning. Only ask when you genuinely can't tell.
 
-   This is crucial for physical products: deconstructing a Tesla could produce
-   code prompts (for its dashboard UI), a PRD (for a similar EV), or a design
-   brief (for its industrial design). Ask the user which output they want.
+2. **Output type** — Code (default), PRD, design brief, service blueprint, learning material.
+   Only ask for physical products or genuinely ambiguous cases. For digital products, code is
+   almost always right.
 
-3. **Style preference** — "What kind of prompts work for you?"
-   - **Framework-style**: Detailed, structured, step-by-step (like a recipe)
-   - **Natural language**: Conversational, like talking to a friend who happens to be an AI
-   - **Hybrid**: Key structure with natural language fill
+3. **Depth** — Often implied by the request. "最少的话" = Minimal. "完整拆解" = Standard Build.
+   "带教学注释" = Learning Deep-Dive. Only ask when the request doesn't signal depth.
 
-4. **Depth** — "How deep do you want to go?"
-   - **Surface**: One overview prompt that captures the gist
-   - **Medium**: A few prompts covering major components
-   - **Full teardown**: Every component, interaction, and design decision as separate prompts
+**Always ask (these can't be inferred):**
 
-5. **Tool context** — "What are you vibe coding with?"
-   - Claude Code (CLI)? → prompts can reference files, terminal commands
-   - Claude.ai / ChatGPT? → prompts stay conversational
-   - Cursor / Windsurf? → prompts can be more code-oriented
-   - Doesn't matter / just want to learn → keep prompts universal
+4. **The soul question** — "如果只能保留这个产品的一个特点，你会选什么？" This reveals the
+   core insight the prompts must capture, and can't be guessed.
 
-**Dig deeper — don't stop at surface answers.** People often can't articulate what they
-actually want until you probe. Try these follow-ups:
+5. **What would you change?** — Reveals taste and intent, unlocks remix opportunities.
 
-- "What specifically about this caught your eye?" → reveals their real interest (might be
-  the animation, not the layout; might be the onboarding flow, not the dashboard)
-- "If you could only keep one thing about this product, what would it be?" → the core
-  insight the prompts must capture
-- "What would you change?" → reveals taste and intent — remix opportunities
-- "Have you tried building something like this before? What went wrong?" → avoids
-  repeating their past mistakes in the prompts
-- "Show me the closest thing you've built or used" → calibrates their skill level
-  and expectations
+For physical products, also ask which output type they want — deconstructing a Tesla could produce
+code prompts (dashboard UI), a PRD (similar EV), or a design brief (industrial design).
 
 ### Phase 3: Deconstruct
 
@@ -415,6 +342,13 @@ Wrap up with:
 **Something the user built themselves** — They want to "write it down as prompts for next time." This is actually easier — interview them about their decisions while building, then translate into prompts.
 
 **Multiple similar products** — "I want prompts that capture what makes these 3 apps good." Identify patterns across them and write prompts that synthesize the best ideas.
+
+**Remix ("X but for Y")** — "I want something like Uber but for dog walking." This is the most
+common real-world use case. Don't just deconstruct X and hand it to the user — the Y context
+changes everything. Explicitly: (1) deconstruct X's soul — what makes it work, (2) map X's
+patterns to Y's domain — what transfers, what doesn't, (3) identify Y-specific constraints
+that X never faced — these are where your prompts add the most value. The output should feel
+like a new product inspired by X, not a lazy clone.
 
 **"I just want to learn vibe coding"** — No specific project in mind. Pick a well-known product as a teaching example (ask what they use daily), walk through the deconstruction as a tutorial, and explain the prompt craft along the way.
 

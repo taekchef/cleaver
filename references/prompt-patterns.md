@@ -1,7 +1,22 @@
 # Prompt Patterns Reference
 
-Detailed guide for the 6 prompt patterns referenced in the main skill. Use these as templates
+Detailed guide for the 12 prompt patterns referenced in the main skill. Use these as templates
 when writing prompts — choose the pattern that matches the situation.
+
+## Table of Contents
+
+- [Pattern 1: Intent-First](#pattern-1-intent-first) — Default, start with why
+- [Pattern 2: Spec-Driven](#pattern-2-spec-driven) — Complex projects, define everything upfront
+- [Pattern 3: Iterative Chain](#pattern-3-iterative-chain) — Multi-step sequential builds
+- [Pattern 4: Not-To-Dos](#pattern-4-not-to-dos) — Scope control via exclusions
+- [Pattern 5: Example-Driven](#pattern-5-example-driven) — Show input/output pairs
+- [Pattern 6: Test-First](#pattern-6-test-first) — Write tests, then implement
+- [Pattern 7: PRD Generator](#pattern-7-prd--product-spec-generator) — Physical products, specs
+- [Pattern 8: Design Brief](#pattern-8-design-brief-generator) — Industrial design direction
+- [Pattern 9: Experience-to-Spec](#pattern-9-experience-to-spec-translator) — Feel to measurements
+- [Pattern 10: GDD Generator](#pattern-10-game-design-document-gdd-generator) — Game design docs
+- [Pattern 11: System Prompt](#pattern-11-system-prompt-architecture) — AI product prompts
+- [Pattern 12: API Contract](#pattern-12-api-contract-specification) — Backend API specs
 
 ---
 

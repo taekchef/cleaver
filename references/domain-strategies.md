@@ -7,6 +7,20 @@ project's domain.
 **Each domain has sub-types** — identify which sub-type you're dealing with before choosing the
 deconstruction order. The wrong sub-type leads to wrong prompts.
 
+## Table of Contents
+
+- [CLI Tools](#cli-tools) — Filter/Proxy, Generator, DevOps, Analysis, REPL
+- [Web Apps / SaaS](#web-apps--saas-dashboards) — Productivity, Dashboard, CRUD, Collaboration, Content
+- [Landing Pages](#landing-pages--marketing-sites) — SaaS, Launch, Portfolio, Docs
+- [Animations](#animations--interactions) — Page transitions, Micro-interactions, Scroll-driven, Data viz
+- [Design Systems](#design-systems--component-libraries) — Tokens, Components, Full system, Brand guide
+- [Mobile Apps](#mobile-apps) — Content, Productivity, Social, E-commerce, Offline-first
+- [Physical Products](#physical--real-world-products) — Electronics, Vehicles, Home, Fashion, Food, Service
+- [Games](#games--interactive-entertainment) — Puzzle, RPG, FPS, Strategy, Casual, Roguelike, Simulation
+- [API / Backend](#api--backend-architecture) — REST, GraphQL, Real-time, Event-driven, SDK
+- [AI / ML Products](#ai--ml-products) — Chatbot, Image gen, Code assistant, Search, Writing, Agent
+- [Choosing the Right Strategy](#choosing-the-right-strategy) — 6-question decision framework
+
 ---
 
 ## CLI Tools
