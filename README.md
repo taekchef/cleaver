@@ -13,7 +13,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/tested-17_scenarios-green" />
   <img src="https://img.shields.io/badge/dimensions-12-blue" />
-  <img src="https://img.shields.io/badge/with_Cleaver-84%25_pass_rate-brightgreen" />
+  <img src="https://img.shields.io/badge/with_Cleaver-85%25_pass_rate-brightgreen" />
   <img src="https://img.shields.io/badge/without-32%25_pass_rate-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
@@ -60,7 +60,7 @@ Cleaver:
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **Key numbers:**
-- With Cleaver: **84%** average pass rate | Without: **32%** | **+52pp improvement**
+- With Cleaver: **85%** average pass rate | Without: **32%** | **+53pp improvement**
 - 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix), Linear re-eval also **100%**
 - Biggest gains: CLI Tool (+78pp), Design System (+67pp), Landing Page / Web App (+67pp)
 
@@ -166,6 +166,12 @@ Full API design teardown: philosophy, data model, API surface (CRUD five-tuple, 
 
 → [Full output](examples/stripe-api.md)
 
+### Fast Track — Wordle (3 prompts)
+
+Game deconstruction using MDA framework: identifies "one sentence to explain rules" as the soul, deconstructs into Foundation (grid + keyboard) → Core game logic (guess + feedback with duplicate-letter edge cases) → Animation + Share (the social viral engine).
+
+→ [Full output](examples/wordle-game.md)
+
 ---
 
 ## How it works
@@ -218,6 +224,7 @@ cleaver/
     ├── stripe-api.md           # API/Backend — Standard Build
     ├── tinder-restaurant.md    # Verbal-only — Fast Track
     └── notion-minimal.md       # Minimal Path — 3 sentences
+    └── wordle-game.md         # Game — Fast Track
 ```
 
 ---

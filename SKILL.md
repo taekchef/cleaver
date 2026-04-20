@@ -133,6 +133,15 @@ Use this format for each prompt:
 **Pro tip:** [Optional vibe coding insight]
 ```
 
+The prompt text itself must include:
+- A **done condition** — "Done when: [testable outcome]" at the end of the prompt text
+- A **not-to-do** — "Don't add [X] yet" or "不要加：[X]" to prevent scope creep
+
+At the end of the output, include a **build order section** showing:
+- Numbered prompt sequence with one-line description per step
+- At least one alternative path (e.g., "if you only have 30 min, do Prompt 0 + 1")
+- Next steps for expansion beyond the current prompts
+
 For 12 specialized prompt patterns (Spec-driven, Iterative chain, Test-first, PRD generator,
 GDD generator, API contract, etc.), read `references/patterns/build-prompts.md` (patterns 1-6),
 `references/patterns/product-docs.md` (patterns 7-10), or `references/patterns/technical-contracts.md`

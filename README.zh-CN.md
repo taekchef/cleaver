@@ -13,7 +13,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/测试场景-17-green" />
   <img src="https://img.shields.io/badge/质量维度-12-blue" />
-  <img src="https://img.shields.io/badge/使用牛刀-84%25通过率-brightgreen" />
+  <img src="https://img.shields.io/badge/使用牛刀-85%25通过率-brightgreen" />
   <img src="https://img.shields.io/badge/未使用-32%25通过率-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
@@ -59,7 +59,7 @@ Vibe coding 很强大，但大多数人**写不出好 prompt**。要么太模糊
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **关键数据：**
-- 使用牛刀平均通过率 **84%**，不使用 **32%**，提升 **+52 个百分点**
+- 使用牛刀平均通过率 **85%**，不使用 **32%**，提升 **+53 个百分点**
 - 3 个新增场景使用牛刀均达到 **100%**（Landing Page、Web App、Remix），Linear 重验也达到 **100%**
 - 最大提升：CLI Tool（+78pp）、Design System / Landing Page / Web App（+67pp）
 
@@ -167,6 +167,12 @@ npx skills add taekchef/cleaver
 
 → [完整输出](examples/stripe-api.md)
 
+### 快速路径 — Wordle（3 个 prompt）
+
+用 MDA 框架拆解游戏：识别灵魂为"一句话就能解释规则"，拆解为 Foundation（网格+键盘）→ 核心游戏逻辑（猜词+反馈，含重复字母边界情况）→ 动画+分享（社交裂变引擎）。
+
+→ [完整输出](examples/wordle-game.md)
+
 ---
 
 ## 工作原理
@@ -221,6 +227,7 @@ cleaver/
     ├── stripe-api.md           # API/Backend — 标准构建
     ├── tinder-restaurant.md    # 口头描述 — 快速路径
     └── notion-minimal.md       # 极简路径 — 3 句话
+    └── wordle-game.md         # Game — 快速路径
 ```
 
 ---

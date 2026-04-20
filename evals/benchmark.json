@@ -28,12 +28,12 @@
     },
     "eval-animation": {
       "label": "Animation",
-      "iteration": 4,
-      "dimensions_tested": 9,
+      "iteration": 6,
+      "dimensions_tested": 12,
       "with_skill": {
-        "passed": 6,
-        "total": 9,
-        "pass_rate": 0.67
+        "passed": 11,
+        "total": 12,
+        "pass_rate": 0.917
       },
       "without_skill": {
         "passed": 2,
@@ -116,6 +116,21 @@
         "pass_rate": 0.33
       }
     },
+    "eval-landing-page": {
+      "label": "Landing Page",
+      "iteration": 5,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 4,
+        "total": 12,
+        "pass_rate": 0.33
+      }
+    },
     "eval-learning-path": {
       "label": "Learning",
       "iteration": 4,
@@ -129,6 +144,21 @@
         "passed": 7,
         "total": 9,
         "pass_rate": 0.78
+      }
+    },
+    "eval-linear": {
+      "label": "Linear (Re-eval)",
+      "iteration": 6,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 1,
+        "total": 12,
+        "pass_rate": 0.08
       }
     },
     "eval-minimal-path": {
@@ -176,6 +206,21 @@
         "pass_rate": 0.33
       }
     },
+    "eval-remix": {
+      "label": "Remix",
+      "iteration": 5,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 5,
+        "total": 12,
+        "pass_rate": 0.42
+      }
+    },
     "eval-service": {
       "label": "Service",
       "iteration": 4,
@@ -206,36 +251,6 @@
         "pass_rate": 0.22
       }
     },
-    "eval-landing-page": {
-      "label": "Landing Page",
-      "iteration": 5,
-      "dimensions_tested": 12,
-      "with_skill": {
-        "passed": 12,
-        "total": 12,
-        "pass_rate": 1.0
-      },
-      "without_skill": {
-        "passed": 4,
-        "total": 12,
-        "pass_rate": 0.33
-      }
-    },
-    "eval-remix": {
-      "label": "Remix",
-      "iteration": 5,
-      "dimensions_tested": 12,
-      "with_skill": {
-        "passed": 12,
-        "total": 12,
-        "pass_rate": 1.0
-      },
-      "without_skill": {
-        "passed": 5,
-        "total": 12,
-        "pass_rate": 0.42
-      }
-    },
     "eval-web-app": {
       "label": "Web App",
       "iteration": 5,
@@ -249,21 +264,6 @@
         "passed": 4,
         "total": 12,
         "pass_rate": 0.33
-      }
-    },
-    "eval-linear": {
-      "label": "Linear (Re-eval)",
-      "iteration": 6,
-      "dimensions_tested": 12,
-      "with_skill": {
-        "passed": 12,
-        "total": 12,
-        "pass_rate": 1.0
-      },
-      "without_skill": {
-        "passed": 1,
-        "total": 12,
-        "pass_rate": 0.08
       }
     }
   },
@@ -320,7 +320,7 @@
     },
     "Build Order": {
       "with_skill": {
-        "passed": 11,
+        "passed": 12,
         "total": 17
       },
       "without_skill": {
@@ -330,7 +330,7 @@
     },
     "Domain Framework": {
       "with_skill": {
-        "passed": 12,
+        "passed": 13,
         "total": 17
       },
       "without_skill": {
@@ -360,8 +360,8 @@
     },
     "Destination Not Route": {
       "with_skill": {
-        "passed": 4,
-        "total": 4
+        "passed": 5,
+        "total": 5
       },
       "without_skill": {
         "passed": 0,
@@ -370,8 +370,8 @@
     },
     "Prompts Standalone": {
       "with_skill": {
-        "passed": 4,
-        "total": 4
+        "passed": 5,
+        "total": 5
       },
       "without_skill": {
         "passed": 3,
@@ -380,8 +380,8 @@
     },
     "Usage Guidance": {
       "with_skill": {
-        "passed": 4,
-        "total": 4
+        "passed": 5,
+        "total": 5
       },
       "without_skill": {
         "passed": 0,
@@ -490,48 +490,51 @@
       "with_skill": [
         {
           "text": "包含产品分析/拆解章节",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "包含完成/验收标准",
-          "passed": false,
-          "evidence": "Not found in 4918 chars of output"
+          "passed": false
         },
         {
           "text": "包含教学注释（为什么有效）",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "包含 Pro Tips / 实战洞察",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "包含构建顺序建议",
-          "passed": false,
-          "evidence": "Not found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "使用领域专属分析框架",
-          "passed": false,
-          "evidence": "Not found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "包含 Not-To-Do / 范围限制",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
         },
         {
           "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true,
-          "evidence": "Found in 4918 chars of output"
+          "passed": true
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true
         }
       ],
       "without_skill": [
@@ -1062,6 +1065,132 @@
         }
       ]
     },
+    "eval-landing-page": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "六层拆解表 + 产品灵魂分析"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "7 个 prompt（Prompt 0-6）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "每个 prompt 有'你会知道它对了，当你看到...'"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "每个 prompt 有 Why this prompt works 注释"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "每个 prompt 有 Pro tip"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Build Order section 含快速路径"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Landing Page 领域分析：Hero+Cards+CTA+Footer 结构"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "10 条 Not-to-Do 清单 + 每个 prompt 有'不要'"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'基础设施产品也能有视觉叙事' — 克制而非堆砌"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true,
+          "evidence": "'像 Vercel 一样干净'而非 CSS 属性列表"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "每个 prompt 含足够上下文"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true,
+          "evidence": "快速路径建议 + 替代路径说明"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "色彩系统、排版、组件风格分析"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "4 个 prompt（完整页+Hero+导航+Footer）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "无 done 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "无 why annotation"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "无 pro tips"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "无 build order"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "通用设计分析，无 Landing Page 专属框架"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "无 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'呼吸感' — 深色留白"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false,
+          "evidence": "大量精确 CSS 值和 hex 色值，过度指定技术实现"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "4 个独立 prompt"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false,
+          "evidence": "无使用建议"
+        }
+      ]
+    },
     "eval-learning-path": {
       "with_skill": [
         {
@@ -1155,6 +1284,108 @@
           "text": "捕获了产品的灵魂/核心差异化",
           "passed": true,
           "evidence": "Found in 12758 chars of output"
+        }
+      ]
+    },
+    "eval-linear": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": false
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false
         }
       ]
     },
@@ -1446,6 +1677,132 @@
         }
       ]
     },
+    "eval-remix": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Uber 六层拆解 + 灵魂映射表"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "4 个 prompt（Foundation + 3 feature）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Prompt 2/3 有 'Done when' 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "每个有 'Why this prompt works'"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "每个有 Pro tip"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Build Order + 快速路径"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Remix 方法论：deconstruct X soul → map to Y → identify constraints"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "每个 prompt 有 3 个 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'即时确定性' → 遛狗场景映射"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true,
+          "evidence": "描述感觉而非实现"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "每个含足够上下文"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true,
+          "evidence": "执行顺序 + 快速路径 + 下一步"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "5 个 Uber 设计模式拆解"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "1 个大 prompt 含完整 spec"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "无 done 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "无 why annotation"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "无 pro tips"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "无 build order"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "跨域映射表（Uber→Dog Walking）"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "无 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "理解 Uber 核心 + 遛狗独特约束"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false,
+          "evidence": "大量技术细节和精确 spec"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "单 prompt 自包含"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false,
+          "evidence": "无使用建议"
+        }
+      ]
+    },
     "eval-service": {
       "with_skill": [
         {
@@ -1638,258 +1995,6 @@
         }
       ]
     },
-    "eval-landing-page": {
-      "with_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true,
-          "evidence": "六层拆解表 + 产品灵魂分析"
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true,
-          "evidence": "7 个 prompt（Prompt 0-6）"
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": true,
-          "evidence": "每个 prompt 有'你会知道它对了，当你看到...'"
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": true,
-          "evidence": "每个 prompt 有 Why this prompt works 注释"
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": true,
-          "evidence": "每个 prompt 有 Pro tip"
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": true,
-          "evidence": "Build Order section 含快速路径"
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": true,
-          "evidence": "Landing Page 领域分析：Hero+Cards+CTA+Footer 结构"
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": true,
-          "evidence": "10 条 Not-to-Do 清单 + 每个 prompt 有'不要'"
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true,
-          "evidence": "'基础设施产品也能有视觉叙事' — 克制而非堆砌"
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": true,
-          "evidence": "'像 Vercel 一样干净'而非 CSS 属性列表"
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": true,
-          "evidence": "每个 prompt 含足够上下文"
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": true,
-          "evidence": "快速路径建议 + 替代路径说明"
-        }
-      ],
-      "without_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true,
-          "evidence": "色彩系统、排版、组件风格分析"
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true,
-          "evidence": "4 个 prompt（完整页+Hero+导航+Footer）"
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": false,
-          "evidence": "无 done 条件"
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": false,
-          "evidence": "无 why annotation"
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": false,
-          "evidence": "无 pro tips"
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": false,
-          "evidence": "无 build order"
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": false,
-          "evidence": "通用设计分析，无 Landing Page 专属框架"
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": false,
-          "evidence": "无 not-to-do"
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true,
-          "evidence": "'呼吸感' — 深色留白"
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": false,
-          "evidence": "大量精确 CSS 值和 hex 色值，过度指定技术实现"
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": true,
-          "evidence": "4 个独立 prompt"
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": false,
-          "evidence": "无使用建议"
-        }
-      ]
-    },
-    "eval-remix": {
-      "with_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true,
-          "evidence": "Uber 六层拆解 + 灵魂映射表"
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true,
-          "evidence": "4 个 prompt（Foundation + 3 feature）"
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": true,
-          "evidence": "Prompt 2/3 有 'Done when' 条件"
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": true,
-          "evidence": "每个有 'Why this prompt works'"
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": true,
-          "evidence": "每个有 Pro tip"
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": true,
-          "evidence": "Build Order + 快速路径"
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": true,
-          "evidence": "Remix 方法论：deconstruct X soul → map to Y → identify constraints"
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": true,
-          "evidence": "每个 prompt 有 3 个 not-to-do"
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true,
-          "evidence": "'即时确定性' → 遛狗场景映射"
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": true,
-          "evidence": "描述感觉而非实现"
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": true,
-          "evidence": "每个含足够上下文"
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": true,
-          "evidence": "执行顺序 + 快速路径 + 下一步"
-        }
-      ],
-      "without_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true,
-          "evidence": "5 个 Uber 设计模式拆解"
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true,
-          "evidence": "1 个大 prompt 含完整 spec"
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": false,
-          "evidence": "无 done 条件"
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": false,
-          "evidence": "无 why annotation"
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": false,
-          "evidence": "无 pro tips"
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": false,
-          "evidence": "无 build order"
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": true,
-          "evidence": "跨域映射表（Uber→Dog Walking）"
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": false,
-          "evidence": "无 not-to-do"
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true,
-          "evidence": "理解 Uber 核心 + 遛狗独特约束"
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": false,
-          "evidence": "大量技术细节和精确 spec"
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": true,
-          "evidence": "单 prompt 自包含"
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": false,
-          "evidence": "无使用建议"
-        }
-      ]
-    },
     "eval-web-app": {
       "with_skill": [
         {
@@ -2013,108 +2118,6 @@
           "text": "包含 prompt 使用建议",
           "passed": false,
           "evidence": "无使用建议"
-        }
-      ]
-    },
-    "eval-linear": {
-      "with_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": true
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": true
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": true
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": true
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": true
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": true
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": true
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": true
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": true
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": true
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": true
-        }
-      ],
-      "without_skill": [
-        {
-          "text": "包含产品分析/拆解章节",
-          "passed": true
-        },
-        {
-          "text": "包含多个可用的重建 prompt（≥2）",
-          "passed": false
-        },
-        {
-          "text": "包含完成/验收标准",
-          "passed": false
-        },
-        {
-          "text": "包含教学注释（为什么有效）",
-          "passed": false
-        },
-        {
-          "text": "包含 Pro Tips / 实战洞察",
-          "passed": false
-        },
-        {
-          "text": "包含构建顺序建议",
-          "passed": false
-        },
-        {
-          "text": "使用领域专属分析框架",
-          "passed": false
-        },
-        {
-          "text": "包含 Not-To-Do / 范围限制",
-          "passed": false
-        },
-        {
-          "text": "捕获了产品的灵魂/核心差异化",
-          "passed": false
-        },
-        {
-          "text": "Prompt 描述目的地而非路线",
-          "passed": false
-        },
-        {
-          "text": "每个 prompt 可独立使用",
-          "passed": false
-        },
-        {
-          "text": "包含 prompt 使用建议",
-          "passed": false
         }
       ]
     }

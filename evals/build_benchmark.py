@@ -52,50 +52,54 @@ def main():
     grading_data = {}
     dimension_agg = {}  # dim_name -> {with: [bool], without: [bool]}
 
-    # Iterate over iteration-4 (13 scenarios, 9 dims) and iteration-5 (3 scenarios, 12 dims)
+    # Pass 1: find latest iteration for each scenario
+    latest = {}  # key -> (iter_num, scenario_dir)
     for iteration_dir in sorted(glob.glob(os.path.join(WORKSPACE, "iteration-*"))):
-        iter_name = os.path.basename(iteration_dir)
-        iter_num = int(iter_name.split("-")[1])
-
+        iter_num = int(os.path.basename(iteration_dir).split("-")[1])
         for scenario_dir in sorted(glob.glob(os.path.join(iteration_dir, "eval-*"))):
             key = os.path.basename(scenario_dir)
-
             with_path = os.path.join(scenario_dir, "with_skill", "grading.json")
             without_path = os.path.join(scenario_dir, "without_skill", "grading.json")
             if not os.path.exists(with_path) or not os.path.exists(without_path):
                 continue
+            if key not in latest or iter_num > latest[key][0]:
+                latest[key] = (iter_num, scenario_dir)
 
-            with_grading = read_grading(with_path)
-            without_grading = read_grading(without_path)
+    # Pass 2: build data from latest iteration only
+    for key, (iter_num, scenario_dir) in sorted(latest.items()):
+        with_path = os.path.join(scenario_dir, "with_skill", "grading.json")
+        without_path = os.path.join(scenario_dir, "without_skill", "grading.json")
+        with_grading = read_grading(with_path)
+        without_grading = read_grading(without_path)
 
-            grading_data[key] = {
-                "with_skill": with_grading["expectations"],
-                "without_skill": without_grading["expectations"],
-            }
+        grading_data[key] = {
+            "with_skill": with_grading["expectations"],
+            "without_skill": without_grading["expectations"],
+        }
 
-            scenarios[key] = {
-                "label": LABELS.get(key, key),
-                "iteration": iter_num,
-                "dimensions_tested": with_grading["summary"]["total"],
-                "with_skill": {
-                    "passed": with_grading["summary"]["passed"],
-                    "total": with_grading["summary"]["total"],
-                    "pass_rate": with_grading["summary"]["pass_rate"],
-                },
-                "without_skill": {
-                    "passed": without_grading["summary"]["passed"],
-                    "total": without_grading["summary"]["total"],
-                    "pass_rate": without_grading["summary"]["pass_rate"],
-                },
-            }
+        scenarios[key] = {
+            "label": LABELS.get(key, key),
+            "iteration": iter_num,
+            "dimensions_tested": with_grading["summary"]["total"],
+            "with_skill": {
+                "passed": with_grading["summary"]["passed"],
+                "total": with_grading["summary"]["total"],
+                "pass_rate": with_grading["summary"]["pass_rate"],
+            },
+            "without_skill": {
+                "passed": without_grading["summary"]["passed"],
+                "total": without_grading["summary"]["total"],
+                "pass_rate": without_grading["summary"]["pass_rate"],
+            },
+        }
 
-            # Aggregate per-dimension
-            for mode, data in [("with_skill", with_grading), ("without_skill", without_grading)]:
-                for exp in data["expectations"]:
-                    dim_name = DIM_SHORT.get(exp["text"], exp["text"])
-                    if dim_name not in dimension_agg:
-                        dimension_agg[dim_name] = {"with_skill": [], "without_skill": []}
-                    dimension_agg[dim_name][mode].append(exp["passed"])
+        # Aggregate per-dimension
+        for mode, data in [("with_skill", with_grading), ("without_skill", without_grading)]:
+            for exp in data["expectations"]:
+                dim_name = DIM_SHORT.get(exp["text"], exp["text"])
+                if dim_name not in dimension_agg:
+                    dimension_agg[dim_name] = {"with_skill": [], "without_skill": []}
+                dimension_agg[dim_name][mode].append(exp["passed"])
 
     # Build dimension summary
     dimensions = {}
