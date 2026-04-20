@@ -1,6 +1,6 @@
-<h1 align="center">Cleaver</h1>
+<h1 align="center">牛刀</h1>
 
-<p align="center"><strong>任意产品，一刀拆成构建它的 prompt。</strong></p>
+<p align="center"><strong>任意产品，一刀拆成能重建它的 prompt。</strong></p>
 
 <p align="center">
   一个 <a href="https://docs.anthropic.com/en/docs/claude-code/skills">Claude Code 技能</a>，把产品逆向工程为可执行的 vibe coding prompt、PRD、设计简报或服务蓝图。
@@ -13,37 +13,40 @@
 <p align="center">
   <img src="https://img.shields.io/badge/测试场景-16-green" />
   <img src="https://img.shields.io/badge/质量维度-12-blue" />
-  <img src="https://img.shields.io/badge/使用Cleaver-82%25通过率-brightgreen" />
+  <img src="https://img.shields.io/badge/使用牛刀-82%25通过率-brightgreen" />
   <img src="https://img.shields.io/badge/未使用-34%25通过率-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
+> 牛刀不声称知道产品原始的内部 prompt、spec 或团队决策。
+> 它把可观察到的产品决策和显式假设，转化为可重建的 prompt。
+
 ---
 
-## 为什么需要 Cleaver？
+## 为什么叫牛刀？
+
+杀鸡焉用牛刀——但你拆解的不是鸡，是一个完整产品。
 
 Vibe coding 很强大，但大多数人**写不出好 prompt**。要么太模糊（"做一个仪表盘"）→ 产出平庸；要么过度指定（"用 CSS grid 三列布局…"）→ 跟 AI 打架。
 
-Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建它们的 prompt"。** 你通过逆向工程最好的产品来学习写 prompt。
+牛刀的做法是：**研究那些已经成功的产品，提取出"能构建它们的 prompt"。** 你通过逆向工程最好的产品来学习写 prompt。区分你**看到的**和**推断的**，不假装知道内部秘密。
 
-就像身边坐了一个资深 prompt 工程师，跟你说："看到 Stripe 怎么处理错误了吗？这是能产出那种效果的 prompt。这是为什么它管用。这是大多数人搞错的地方。"
+### 坏 prompt vs 牛刀 prompt
 
----
+```
+坏的：
+> 做一个像 Linear 的仪表盘。
 
-## 它能做什么？
+为什么不行：
+- 只抄了表面样式，丢失了速度感、键盘流、issue triage 和状态流转。
+- 没有范围边界，没有完成标准，没有灵魂。
 
-给 Cleaver **任何产品** —— 截图、URL、代码仓库、口头描述，甚至实物 —— 它会：
-
-1. **分析**产品的架构、设计决策和灵魂
-2. **拆解**成层次（基础、结构、视觉、交互、数据）
-3. **生成**可直接复制粘贴的 prompt
-
-适应**你想要的输出**：
-- Vibe coding prompt（构建它）
-- PRD prompt（规划它）
-- 设计简报（设计它）
-- 服务蓝图（运营它）
-- 学习材料（理解它）
+牛刀：
+> 做一个 issue tracker，核心承诺是"不让你慢下来"。
+> 首屏是 inbox 式的 issue 列表，键盘优先，即时命令面板，
+> 快速状态切换，不要模态弹窗编辑。完成标准：用户能不用鼠标完成创建、
+> 分配、排优先级和关闭 issue。不要加 roadmap、文档、聊天或分析。
+```
 
 ---
 
@@ -51,21 +54,25 @@ Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建
 
 ### 16 场景整体对比
 
-16 个测试场景，评估最多 12 个质量维度。绿色条 = 使用 Cleaver（已有场景），橙色 = 使用 Cleaver（新增场景），灰色 = 不使用。
+16 个测试场景，评估最多 12 个质量维度。绿色条 = 使用牛刀（已有场景），橙色 = 使用牛刀（新增场景），灰色 = 不使用。
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **关键数据：**
-- 使用 Cleaver 平均通过率 **82%**，不使用 **34%**，提升 **+48 个百分点**
-- 3 个新增场景使用 Cleaver 均达到 **100%**（Landing Page、Web App、Remix）
+- 使用牛刀平均通过率 **82%**，不使用 **34%**，提升 **+48 个百分点**
+- 3 个新增场景使用牛刀均达到 **100%**（Landing Page、Web App、Remix）
 - 最大提升：CLI Tool（+78pp）、Design System / Landing Page / Web App（+67pp）
+
+> 方法论：每个场景分别在有/无技能下运行，由 Claude 按 12 维度评分标准打分，
+> 涵盖产品分析、prompt 质量、范围控制、教学价值。
 
 ### 12 质量维度详细对比
 
 <img src="./docs/dimensions.svg" alt="dimension coverage chart" width="100%" />
 
-**Cleaver 价值最大的维度：**
-| 维度 | 使用 Cleaver | 不使用 | 差距 |
+**牛刀价值最大的维度：**
+
+| 维度 | 使用牛刀 | 不使用 | 差距 |
 |------|-------------|--------|------|
 | Why Annotations（教学注释） | 15/16 (94%) | 0/16 (0%) | **+94pp** |
 | Not-To-Do（范围控制） | 16/16 (100%) | 6/16 (38%) | **+63pp** |
@@ -80,17 +87,29 @@ Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建
 
 ---
 
+## 它能做什么？
+
+给牛刀**任何产品** —— 截图、URL、代码仓库、口头描述，甚至实物 —— 它会：
+
+1. **分析**产品的架构、设计决策和灵魂（区分观察到的事实和推断的意图）
+2. **拆解**成层次（基础、结构、视觉、交互、数据）
+3. **生成**可直接复制粘贴的 prompt
+
+适应**你想要的输出**：
+- Vibe coding prompt（构建它）
+- PRD prompt（规划它）
+- 设计简报（设计它）
+- 服务蓝图（运营它）
+- 学习材料（理解它）
+
 ## 5 种路径
 
-| 路径 | Prompt 数 | 耗时 | 适合 |
-|------|-----------|------|------|
-| **极简** | 1（2-3 句话） | 即时 | "只给我灵魂" |
-| **快速** | 2-3 | ~30 分钟 | "我现在就要能用的东西" |
-| **标准构建** | 5-8 | 数小时 | "我要复刻这个" |
-| **学习深潜** | 5-10（带注释） | 数小时 | "教我怎么用 prompt 思考" |
-| + **基础 Prompt** | +1（始终包含） | — | 项目 DNA（技术栈、结构、规范） |
-
----
+| 路径 | Prompt 数 | 耗时 | 适合 | Prompt 0？ |
+|------|-----------|------|------|------------|
+| **极简** | 1（2-3 句话） | 即时 | "只给我灵魂" | 否 |
+| **快速** | 2-3 | ~30 分钟 | "我现在就要能用的东西" | 是 |
+| **标准构建** | 5-8 | 数小时 | "我要复刻这个" | 是 |
+| **学习深潜** | 5-10（带注释） | 数小时 | "教我怎么用 prompt 思考" | 是 |
 
 ## 10 个领域
 
@@ -100,24 +119,6 @@ Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建
 | Design System | Game | API / Backend | AI Product | Service / 实体产品 |
 
 每个领域有专属拆解策略——游戏用 MDA 框架，API 用契约驱动设计，AI 产品用系统 prompt 架构，服务用蓝图方法论。
-
-### 测试覆盖
-
-| 领域 | 测试场景 | 通过率 |
-|------|---------|--------|
-| AI Product | System prompt 架构 + context pipeline | 8/9 (89%) |
-| Animation | iOS 删除 app 抖动动画 | 6/9 (67%) |
-| API / Backend | Stripe API 设计理念 | 7/9 (78%) |
-| CLI Tool | Rust 命令行代理工具 | **9/9 (100%)** |
-| Design System | 设计系统 + 组件库 | 8/9 (89%) |
-| Game | 游戏核心循环 + MDA | 8/9 (89%) |
-| Mobile App | Tinder 式滑卡餐厅 App | 8/9 (89%) |
-| Service | Dyson 吹风机实体产品 | 7/9 (78%) |
-| **Landing Page** | Vercel 首页拆解 | **12/12 (100%)** |
-| **Web App / SaaS** | Linear 项目管理工具 | **12/12 (100%)** |
-| **Remix** | Uber → 遛狗 App 跨域映射 | **12/12 (100%)** |
-| **Learning Path** | 带"为什么"注释的完整拆解 | **9/9 (100%)** |
-| Verbal Only | 口头描述 → 推断产品 | 6/9 (67%) |
 
 ---
 
@@ -152,7 +153,7 @@ npx skills add taekchef/cleaver
 
 ### 快速路径 — "Tinder for restaurants"（3 个 prompt）
 
-用户说："全屏卡片左右滑选餐厅"——Cleaver 推断产品原型，识别为"决策疲劳杀手"，生成 1 个 Foundation Prompt + 2 个功能 Prompt。
+用户说："全屏卡片左右滑选餐厅"——牛刀推断产品原型，识别为"决策疲劳杀手"，生成 1 个 Foundation Prompt + 2 个功能 Prompt。
 
 → [完整输出](examples/tinder-restaurant.md)
 
@@ -174,10 +175,10 @@ URL     ──┤
 代码仓库 ──┼──► Phase 1: 理解产品 ──► Phase 3: 拆解
 口头描述 ──┤    Phase 2: 理解用户     （6 层框架 +
 设计文件 ──┤              想要什么     领域定制）
-实体产品 ──┘
+实体产品 ──┘    （能推断就不问）
                                 ► Phase 4: 写 prompt
                                   （12 种 prompt 模式）
-                                ► 质量门禁（7 项检查）
+                                ► 质量门禁（按路径分级）
 ```
 
 **12 种 prompt 模式**：Intent-first、Spec-driven、Iterative chain、Not-to-dos、Example-driven、Test-first、PRD generator、Design brief、Experience-to-Spec、GDD generator、System prompt、API contract。详见 [`references/prompt-patterns.md`](references/prompt-patterns.md)。
@@ -188,7 +189,7 @@ URL     ──┤
 
 ```
 cleaver/
-├── SKILL.md                    # 主技能（140 行）
+├── SKILL.md                    # 主技能（180 行）
 ├── README.md                   # English README
 ├── README.zh-CN.md             # 中文 README（本文件）
 ├── LICENSE                     # MIT
@@ -197,13 +198,25 @@ cleaver/
 │   ├── dimensions.svg          # 12 维度对比图
 │   └── generate_charts.py      # 图表生成脚本
 ├── references/
-│   ├── domain-strategies.md    # 10 领域策略（800 行）
-│   └── prompt-patterns.md      # 12 种 prompt 模式（744 行）
+│   ├── domain-strategies.md    # 10 领域策略
+│   └── prompt-patterns.md      # 12 种 prompt 模式
 └── examples/
     ├── stripe-api.md           # API/Backend — 标准构建
     ├── tinder-restaurant.md    # 口头描述 — 快速路径
     └── notion-minimal.md       # 极简路径 — 3 句话
 ```
+
+---
+
+## 负责任地使用
+
+牛刀用于学习、启发、合法的 remix 和产品理解。
+不要用于复制专有资产、冒充品牌、绕过访问控制，
+或以违反许可证、服务条款或用户信任的方式克隆产品。
+
+Remix 真实产品时，保留教训，不要保留身份。
+提取模式、交互原则和架构决策——
+避免复制名称、品牌、专有内容或私有实现细节。
 
 ---
 

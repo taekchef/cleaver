@@ -1,6 +1,6 @@
-<h1 align="center">Cleaver</h1>
+<h1 align="center">Cleaver <sup><code>牛刀</code></sup></h1>
 
-<p align="center"><strong>Take any product, cleave it into the prompts that built it.</strong></p>
+<p align="center"><strong>Take any product, extract source-aware prompts that could rebuild its essential decisions.</strong></p>
 
 <p align="center">
   A <a href="https://docs.anthropic.com/en/docs/claude-code/skills">Claude Code skill</a> that reverse-engineers products into actionable prompts for vibe coding, PRDs, design briefs, and service blueprints.
@@ -18,6 +18,9 @@
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
+> Cleaver does not claim to know the original prompts, specs, or internal decisions behind a product.
+> It turns observable product decisions and explicit assumptions into rebuildable prompts.
+
 ---
 
 ## Why Cleaver?
@@ -28,7 +31,23 @@ Vibe coding is powerful, but most people struggle with **writing good prompts**.
 
 Cleaver solves this by studying products that already work — extracting the **prompts that would have built them**. You learn by reverse-engineering the best.
 
-It's like having a senior prompt engineer sitting next to you, saying: "See how Stripe handles errors? Here's the prompt that produces that. Here's why it works. Here's what most people get wrong."
+### Bad prompt vs. Cleaver prompt
+
+```
+Bad:
+> Make a dashboard like Linear.
+
+Why it fails:
+- Copies surface style but misses speed, keyboard flow, issue triage, and state transitions.
+- No scope boundary, no "done" condition, no soul.
+
+Cleaver:
+> Build an issue tracker whose core promise is "nothing slows you down".
+> The first screen is an inbox-like issue list, keyboard-first, with instant command palette,
+> fast status changes, and no modal-heavy editing. Done when a user can create, assign,
+> prioritize, and close an issue without touching the mouse.
+> Do not add roadmap, docs, chat, or analytics yet.
+```
 
 ---
 
@@ -44,6 +63,9 @@ It's like having a senior prompt engineer sitting next to you, saying: "See how 
 - With Cleaver: **82%** average pass rate | Without: **34%** | **+48pp improvement**
 - 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix)
 - Biggest gains: CLI Tool (+78pp), Design System (+67pp), Landing Page / Web App (+67pp)
+
+> Methodology: each scenario was run with and without the skill active, graded by Claude against
+> a 12-dimension rubric covering product analysis, prompt quality, scope control, and teaching value.
 
 ### 12 Quality Dimensions
 
@@ -70,7 +92,7 @@ It's like having a senior prompt engineer sitting next to you, saying: "See how 
 
 Give Cleaver **any product** — a screenshot, a URL, a code repo, a verbal description, even a physical object — and it will:
 
-1. **Analyze** the product's architecture, design decisions, and soul
+1. **Analyze** the product's architecture, design decisions, and soul (separating observed facts from inferred intent)
 2. **Deconstruct** it into layers (foundation, structure, visual, interaction, data)
 3. **Generate** copy-paste-ready prompts you can use to recreate or learn from it
 
@@ -83,13 +105,12 @@ It adapts to **what you want**:
 
 ## 5 Paths
 
-| Path | Prompts | Time | Best for |
-|------|---------|------|----------|
-| **Minimal** | 1 (2-3 sentences) | instant | "Just give me the soul" |
-| **Fast Track** | 2-3 | ~30 min | "I want something working now" |
-| **Standard Build** | 5-8 | hours | "I want to recreate this" |
-| **Learning Deep-Dive** | 5-10 (annotated) | hours | "Teach me how to think in prompts" |
-| + **Foundation Prompt** | +1 (always) | — | Project DNA (tech stack, structure, conventions) |
+| Path | Prompts | Time | Best for | Prompt 0? |
+|------|---------|------|----------|-----------|
+| **Minimal** | 1 (2-3 sentences) | instant | "Just give me the soul" | No |
+| **Fast Track** | 2-3 | ~30 min | "I want something working now" | Yes |
+| **Standard Build** | 5-8 | hours | "I want to recreate this" | Yes |
+| **Learning Deep-Dive** | 5-10 (annotated) | hours | "Teach me how to think in prompts" | Yes |
 
 ## 10 Domains
 
@@ -153,10 +174,10 @@ URL          ──┤
 Code/repo    ──┼──► Phase 1: Understand ──► Phase 3: Deconstruct
 Verbal desc  ──┤    Phase 2: What user    (6-layer framework +
 Design file  ──┤             wants         domain overrides)
-Physical obj ──┘
+Physical obj ──┘    (infer, don't ask)
                                          ► Phase 4: Write prompts
                                            (12 prompt patterns)
-                                         ► Quality Gate (7 checks)
+                                         ► Quality Gate (path-specific)
 ```
 
 **12 prompt patterns**: Intent-first, Spec-driven, Iterative chain, Not-to-dos, Example-driven, Test-first, PRD generator, Design brief, Experience-to-Spec, GDD generator, System prompt, API contract. See [`references/prompt-patterns.md`](references/prompt-patterns.md).
@@ -165,7 +186,7 @@ Physical obj ──┘
 
 ```
 cleaver/
-├── SKILL.md                    # Main skill (140 lines)
+├── SKILL.md                    # Main skill (180 lines)
 ├── README.md                   # This file
 ├── README.zh-CN.md             # Chinese README
 ├── LICENSE                     # MIT
@@ -174,13 +195,25 @@ cleaver/
 │   ├── dimensions.svg          # 12-dimension coverage chart
 │   └── generate_charts.py      # Chart generation script
 ├── references/
-│   ├── domain-strategies.md    # 10 domain strategies (800 lines)
-│   └── prompt-patterns.md      # 12 prompt patterns (744 lines)
+│   ├── domain-strategies.md    # 10 domain strategies
+│   └── prompt-patterns.md      # 12 prompt patterns
 └── examples/
     ├── stripe-api.md           # API/Backend — Standard Build
     ├── tinder-restaurant.md    # Verbal-only — Fast Track
     └── notion-minimal.md       # Minimal Path — 3 sentences
 ```
+
+---
+
+## Responsible Use
+
+Cleaver is for learning, inspiration, legitimate remixing, and product understanding.
+Do not use it to copy proprietary assets, impersonate brands, bypass access controls,
+or clone products in ways that violate licenses, terms, or user trust.
+
+When remixing a real product, preserve the lesson, not the identity.
+Extract patterns, interaction principles, and architectural decisions —
+avoid copying names, branding, proprietary content, or private implementation details.
 
 ---
 
