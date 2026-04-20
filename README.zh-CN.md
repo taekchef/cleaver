@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/测试场景-13-green" />
-  <img src="https://img.shields.io/badge/通过率-107/107_assertions-brightgreen" />
-  <img src="https://img.shields.io/badge/覆盖领域-10-blue" />
-  <img src="https://img.shields.io/badge/语言-中英文-yellow" />
+  <img src="https://img.shields.io/badge/测试场景-16-green" />
+  <img src="https://img.shields.io/badge/质量维度-12-blue" />
+  <img src="https://img.shields.io/badge/使用Cleaver-82%25通过率-brightgreen" />
+  <img src="https://img.shields.io/badge/未使用-34%25通过率-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
@@ -49,28 +49,34 @@ Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建
 
 ## 效果验证
 
-### 13 场景整体对比
+### 16 场景整体对比
 
-13 个测试场景，每个评估 9 个质量维度。绿色条 = 使用 Cleaver，灰色条 = 不使用。
+16 个测试场景，评估最多 12 个质量维度。绿色条 = 使用 Cleaver（已有场景），橙色 = 使用 Cleaver（新增场景），灰色 = 不使用。
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **关键数据：**
-- 使用 Cleaver 平均通过率 **79%**，不使用 **32%**，提升 **+47 个百分点**
-- 最大提升：CLI Tool（+78pp）、Design System（+67pp）、AI Product / Game / Mobile App（+56pp）
+- 使用 Cleaver 平均通过率 **82%**，不使用 **34%**，提升 **+48 个百分点**
+- 3 个新增场景使用 Cleaver 均达到 **100%**（Landing Page、Web App、Remix）
+- 最大提升：CLI Tool（+78pp）、Design System / Landing Page / Web App（+67pp）
 
-### 9 维度详细对比
+### 12 质量维度详细对比
 
 <img src="./docs/dimensions.svg" alt="dimension coverage chart" width="100%" />
 
-**维度差距最大的：**
+**Cleaver 价值最大的维度：**
 | 维度 | 使用 Cleaver | 不使用 | 差距 |
 |------|-------------|--------|------|
-| Why Annotations（教学注释） | 12/13 (92%) | 0/13 (0%) | **+92pp** |
-| Done Criteria（完成标准） | 5/13 (38%) | 0/13 (0%) | **+38pp** |
-| Pro Tips（实战洞察） | 9/13 (69%) | 3/13 (23%) | **+46pp** |
-| Build Order（构建顺序） | 7/13 (54%) | 1/13 (8%) | **+46pp** |
-| Soul Capture（灵魂捕捉） | 13/13 (100%) | 4/13 (31%) | **+69pp** |
+| Why Annotations（教学注释） | 15/16 (94%) | 0/16 (0%) | **+94pp** |
+| Not-To-Do（范围控制） | 16/16 (100%) | 6/16 (38%) | **+63pp** |
+| Done Criteria（完成标准） | 8/16 (50%) | 0/16 (0%) | **+50pp** |
+| Pro Tips（实战洞察） | 12/16 (75%) | 3/16 (19%) | **+56pp** |
+| Build Order（构建顺序） | 10/16 (63%) | 1/16 (6%) | **+56pp** |
+| Soul Capture（灵魂捕捉） | 16/16 (100%) | 7/16 (44%) | **+56pp** |
+| 目的地而非路线 * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+| 使用建议 * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+
+*\* 新增维度，在 3 个额外场景中测试*
 
 ---
 
@@ -107,6 +113,9 @@ Cleaver 的做法是：**研究那些已经成功的产品，提取出"能构建
 | Game | 游戏核心循环 + MDA | 8/9 (89%) |
 | Mobile App | Tinder 式滑卡餐厅 App | 8/9 (89%) |
 | Service | Dyson 吹风机实体产品 | 7/9 (78%) |
+| **Landing Page** | Vercel 首页拆解 | **12/12 (100%)** |
+| **Web App / SaaS** | Linear 项目管理工具 | **12/12 (100%)** |
+| **Remix** | Uber → 遛狗 App 跨域映射 | **12/12 (100%)** |
 | **Learning Path** | 带"为什么"注释的完整拆解 | **9/9 (100%)** |
 | Verbal Only | 口头描述 → 推断产品 | 6/9 (67%) |
 
@@ -184,8 +193,8 @@ cleaver/
 ├── README.zh-CN.md             # 中文 README（本文件）
 ├── LICENSE                     # MIT
 ├── docs/
-│   ├── benchmark.svg           # 13 场景对比图
-│   ├── dimensions.svg          # 9 维度对比图
+│   ├── benchmark.svg           # 16 场景对比图
+│   ├── dimensions.svg          # 12 维度对比图
 │   └── generate_charts.py      # 图表生成脚本
 ├── references/
 │   ├── domain-strategies.md    # 10 领域策略（800 行）

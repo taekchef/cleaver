@@ -11,9 +11,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tested-13_scenarios-green" />
-  <img src="https://img.shields.io/badge/pass_rate-107/107_assertions-brightgreen" />
-  <img src="https://img.shields.io/badge/domains-10-blue" />
+  <img src="https://img.shields.io/badge/tested-16_scenarios-green" />
+  <img src="https://img.shields.io/badge/dimensions-12-blue" />
+  <img src="https://img.shields.io/badge/with_Cleaver-82%25_pass_rate-brightgreen" />
+  <img src="https://img.shields.io/badge/without-34%25_pass_rate-lightgrey" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
 
@@ -33,17 +34,18 @@ It's like having a senior prompt engineer sitting next to you, saying: "See how 
 
 ## Proof it works
 
-### 13-Scenario Benchmark
+### 16-Scenario Benchmark
 
-13 test scenarios, each graded on 9 quality dimensions. Green = with Cleaver, Gray = without.
+16 test scenarios, graded on up to 12 quality dimensions. Green = with Cleaver, Orange = with Cleaver (new scenarios), Gray = without.
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
 **Key numbers:**
-- With Cleaver: **79%** average pass rate | Without: **32%** | **+47pp improvement**
-- Biggest gains: CLI Tool (+78pp), Design System (+67pp), AI Product / Game / Mobile App (+56pp)
+- With Cleaver: **82%** average pass rate | Without: **34%** | **+48pp improvement**
+- 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix)
+- Biggest gains: CLI Tool (+78pp), Design System (+67pp), Landing Page / Web App (+67pp)
 
-### Quality Dimension Breakdown
+### 12 Quality Dimensions
 
 <img src="./docs/dimensions.svg" alt="dimension coverage chart" width="100%" />
 
@@ -51,11 +53,16 @@ It's like having a senior prompt engineer sitting next to you, saying: "See how 
 
 | Dimension | With Cleaver | Without | Gap |
 |-----------|-------------|---------|-----|
-| Why Annotations (teaching) | 12/13 (92%) | 0/13 (0%) | **+92pp** |
-| Done Criteria (acceptance) | 5/13 (38%) | 0/13 (0%) | **+38pp** |
-| Pro Tips (practical insight) | 9/13 (69%) | 3/13 (23%) | **+46pp** |
-| Build Order (sequencing) | 7/13 (54%) | 1/13 (8%) | **+46pp** |
-| Soul Capture (core identity) | 13/13 (100%) | 4/13 (31%) | **+69pp** |
+| Why Annotations (teaching) | 15/16 (94%) | 0/16 (0%) | **+94pp** |
+| Not-To-Do (scope control) | 16/16 (100%) | 6/16 (38%) | **+63pp** |
+| Done Criteria (acceptance) | 8/16 (50%) | 0/16 (0%) | **+50pp** |
+| Pro Tips (practical insight) | 12/16 (75%) | 3/16 (19%) | **+56pp** |
+| Build Order (sequencing) | 10/16 (63%) | 1/16 (6%) | **+56pp** |
+| Soul Capture (core identity) | 16/16 (100%) | 7/16 (44%) | **+56pp** |
+| Destination Not Route * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+| Usage Guidance * | 3/3 (100%) | 0/3 (0%) | **+100pp** |
+
+*\* New dimensions, tested on 3 additional scenarios*
 
 ---
 
@@ -163,8 +170,8 @@ cleaver/
 ├── README.zh-CN.md             # Chinese README
 ├── LICENSE                     # MIT
 ├── docs/
-│   ├── benchmark.svg           # 13-scenario comparison chart
-│   ├── dimensions.svg          # 9-dimension coverage chart
+│   ├── benchmark.svg           # 16-scenario comparison chart
+│   ├── dimensions.svg          # 12-dimension coverage chart
 │   └── generate_charts.py      # Chart generation script
 ├── references/
 │   ├── domain-strategies.md    # 10 domain strategies (800 lines)
