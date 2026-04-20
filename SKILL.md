@@ -12,362 +12,129 @@ description: >
 
 # Cleaver
 
-Like a butcher's cleaver — take any finished product, cleave it into the prompts that built it.
+Take any finished product, cleave it into the prompts that built it.
 
-This skill helps product managers (and anyone curious) reverse-engineer ANY product — digital or
-physical — into prompts they can learn from, modify, or use to create similar work. Output can be
-code prompts (vibe coding), PRD prompts (product specs), design prompts (briefs), or service
-prompts (blueprints) — whatever the user needs.
+Output can be code prompts (vibe coding), PRD prompts, design briefs, or service blueprints —
+whatever the user needs. You're not just writing prompts — you're teaching the user how to think
+in prompts. The goal is that eventually they won't need this skill anymore.
 
 ## Paths & Foundation
 
-Different users want different things. After Phase 2, choose a path:
+After Phase 2, choose a path. Tell the user which path you picked and why.
 
-**Minimal (1 prompt, 2-3 sentences — the soul of the product)**
-For: "Just give me the essence, I'll figure out the rest"
-How: Distill the entire product into 2-3 sentences that capture the soul. This is not a spec — it's
-a haiku. The first sentence says WHAT it is and WHY it matters. The second says HOW it feels.
-The third (optional) says what to use or what NOT to do. The user takes this and iterates on their own.
-Trade-off: minimal guidance, maximum freedom, but relies on the user's taste and skill.
+| Path | Prompts | For | Trade-off |
+|------|---------|-----|-----------|
+| **Minimal** | 1 (2-3 sentences) | "Just give me the soul" | Max freedom, relies on user's taste |
+| **Fast Track** | 2-3 (~30 min) | "I want something working now" | Ambitious first prompt, then refine |
+| **Standard Build** | 5-8 | "I want to recreate this" | Thorough but more to manage |
+| **Learning Deep-Dive** | 5-10 (annotated) | "Teach me how to think in prompts" | Verbose but maximum educational value |
 
-Example: "做一个项目管理工具，核心是'不挡路' — 打开就用，键盘搞定一切，像在终端里
-写代码一样流畅，不需要点来点去。深色极简风格，参考 Linear 的感觉。React + Tailwind，
-不要组件库。"
+**Foundation Prompt (Prompt 0) — always included.** Before any feature prompt, generate one
+"setup" prompt establishing the project's DNA: tech stack, directory structure, architecture,
+base styles, config, conventions, and a "done" condition. This prevents every subsequent prompt
+from re-establishing context and keeps things consistent.
 
-**Fast Track (2-3 prompts, ~30 min to working prototype)**
-For: "I just want to see something working ASAP"
-How: One "everything" prompt that captures the soul of the product, then 1-2 refinement prompts.
-The first prompt should be ambitious — describe the whole thing in one shot. It won't be perfect,
-but the user gets something tangible to react to. Then refine based on what's wrong.
-Trade-off: less control, more surprises, but instant gratification.
-
-**Foundation Prompt (Prompt 0 — always generated first)**
-For: Every path. This is the infrastructure layer.
-How: Before any feature prompt, generate one "setup" prompt that establishes the project's DNA.
-This prompt is always included regardless of which path the user chooses. It covers:
-- Tech stack and framework choices (with reasoning)
-- Project directory structure
-- Core architecture pattern (monolith, modular, component-based, etc.)
-- Base styles/theme system (colors, typography, spacing scale)
-- Configuration files (tsconfig, tailwind config, etc.)
-- Conventions (naming, file organization, state management approach)
-- A "definition of done" for the setup phase
-
-The foundation prompt solves a real problem: without it, every subsequent prompt has to re-establish
-context ("use React + TypeScript + Tailwind, dark theme, Inter font..."), which wastes tokens and
-risks inconsistency. With it, every feature prompt can simply say "building on the foundation from
-Prompt 0" and focus on the feature itself.
-
-Example: For the Linear teardown, the foundation prompt would set up the Next.js project, establish
-the dark theme tokens, create the layout shell component, and define the keyboard shortcut
-registration system — all before any feature prompt runs.
-
-**Standard Build (5-8 prompts, full component coverage)**
-For: "I want to actually recreate this thing"
-How: Follow the full Phase 1-5 workflow. Each prompt builds one layer or component.
-Trade-off: more effort, more prompts to manage, but predictable and thorough.
-
-**Learning Deep-Dive (5-10 prompts with heavy annotations)**
-For: "I want to understand how to think in prompts"
-How: Same as Standard Build, but every prompt gets detailed "Why this prompt works" and "Pro tip"
-annotations. Include anti-patterns and common mistakes for each technique.
-Trade-off: verbose output, takes longer to read, but maximum educational value.
-
-Tell the user which path you're taking and why. Let them override your choice.
+Example: "做一个项目管理工具，核心是'不挡路' — 打开就用，键盘搞定一切。React + Tailwind，不要组件库。"
 
 ## The Workflow
 
 ### Phase 1: Understand what the user brought you
 
-Figure out what you're working with. Each input type needs a different lens — don't treat them all
-the same. For detailed domain-specific analysis, read `references/domain-strategies.md`.
+Each input type needs a different lens. For detailed domain-specific analysis, read
+`references/domain-strategies.md`.
 
-**Screenshot / image** — Think like a designer doing a critique. Focus on: visual hierarchy (what
-draws the eye first), component inventory, typography scale, color palette, spacing rhythm, and
-interaction hints. Note mobile vs desktop clues.
-
-**URL / live website** — Fetch and study: information architecture, navigation model, key
-interactions, responsive behavior, loading patterns. Grab tech stack clues from source.
-
-**Code / repo** — Read strategically: README → entry point → data model → directory structure →
-config files → tests. Tests reveal what the author considered important.
-
-**Verbal description** — "I saw this thing that did X..." Extract the core idea, then probe for
-what specifically caught their attention and what they'd change.
-
-**Design file (Figma, Sketch)** — Think in systems: component hierarchy (atoms → organisms),
-design tokens, repeating patterns, state variations, breakpoints.
-
-**A specific feature / interaction** — Isolate the mechanism: trigger → change → transition.
-Separate user experience from technical implementation.
-
-**A game** — Work backwards from player experience via MDA framework: core loop, target emotions,
-progression, game feel (juice), balance numbers, session design.
-
-**An AI product** — The invisible layer IS the product: system prompt architecture, context
-pipeline (RAG/memory/search), model strategy, tool definitions, guardrails, output quality.
-
-**A physical product** — User's perspective: first impression, core interaction loop, sensory
-profile, materials, interface points (buttons/screens/haptics), user journey, intangible quality.
+- **Screenshot / image** — Visual hierarchy, component inventory, typography, colors, spacing, interaction hints
+- **URL / live website** — Info architecture, navigation, key interactions, responsive behavior, tech stack clues
+- **Code / repo** — README → entry point → data model → directory structure → config → tests
+- **Verbal description** — Extract core idea, probe for what caught their attention and what they'd change
+- **Design file** — Component hierarchy, design tokens, repeating patterns, state variations
+- **A specific feature** — Isolate trigger → change → transition
+- **A game** — MDA framework: core loop, target emotions, progression, game feel, balance
+- **An AI product** — System prompt architecture, context pipeline, model strategy, guardrails
+- **A physical product** — First impression, interaction loop, sensory profile, materials, user journey
 
 Don't rush this. Misunderstanding the product = garbage prompts.
 
 ### Phase 2: Understand what the user wants
 
-Before deconstructing, figure out the user's intent. **Don't ask all 5 questions by default** —
-infer what you can from context and only ask what you can't determine. A user saying "拆解 Stripe"
-in Claude Code probably wants actionable code prompts. A user saying "我想学习 prompt engineering"
-wants learning material. Skip the obvious.
+**Infer what you can, only ask what you can't.** "拆解 Stripe" in Claude Code → code prompts.
+"教我怎么写 prompt" → learning material. Skip the obvious.
 
-Only ask when ambiguous:
+When ambiguous, ask:
+1. **Purpose** — Learn? Recreate? Remix?
+2. **Output type** — Code (default), PRD, design brief, service blueprint
+3. **Depth** — "最少的话" = Minimal, "完整拆解" = Standard Build
 
-1. **Purpose** — Learn? Recreate? Remix? If they said "30分钟搞出原型" that's Fast Track recreate.
-   If they said "教我怎么写 prompt" that's learning. Only ask when you genuinely can't tell.
-
-2. **Output type** — Code (default), PRD, design brief, service blueprint, learning material.
-   Only ask for physical products or genuinely ambiguous cases. For digital products, code is
-   almost always right.
-
-3. **Depth** — Often implied by the request. "最少的话" = Minimal. "完整拆解" = Standard Build.
-   "带教学注释" = Learning Deep-Dive. Only ask when the request doesn't signal depth.
-
-**Always ask (these can't be inferred):**
-
-4. **The soul question** — "如果只能保留这个产品的一个特点，你会选什么？" This reveals the
-   core insight the prompts must capture, and can't be guessed.
-
-5. **What would you change?** — Reveals taste and intent, unlocks remix opportunities.
-
-For physical products, also ask which output type they want — deconstructing a Tesla could produce
-code prompts (dashboard UI), a PRD (similar EV), or a design brief (industrial design).
+**Always ask:**
+4. **Soul question** — "如果只能保留一个特点，你会选什么？" Can't be inferred.
+5. **What would you change?** — Reveals taste, unlocks remix.
 
 ### Phase 3: Deconstruct
 
-Now cleave the project apart. Think like a product manager who built this — what decisions did they make, in what order?
+Cleave the project into layers. Think like the product manager who built this — what decisions
+did they make, in what order?
 
-**The deconstruction framework:**
+Use the 6-layer framework: **Foundation → Structure → Visual Design → Interaction → Polish → Data**.
+Not every layer applies. Adapt the order per domain:
 
-```
-Layer 1: Foundation
-  - What is this? (one sentence)
-  - Who is it for?
-  - What problem does it solve?
-  → Prompt: "Build me a [type] that [solves X] for [user type]..."
+- **Games**: Replace Visual with "Core Loop & Feel", add "Balance & Numbers"
+- **APIs**: Replace Visual with "API Surface", replace Interaction with "Operational Contracts"
+- **AI Products**: Add "System Prompt Architecture" and "Context Pipeline" layers
 
-Layer 2: Structure
-  - What are the main components / sections?
-  - How are they arranged?
-  - What's the information hierarchy?
-  → Prompt: "Add [component] with [layout] that shows [content]..."
-
-Layer 3: Visual Design
-  - What's the aesthetic? (minimal, bold, playful, corporate...)
-  - Color palette and typography vibes?
-  - Spacing and density?
-  → Prompt: "Style it with [aesthetic] — think [references]..."
-
-Layer 4: Interaction & Behavior
-  - What happens when users do things?
-  - Animations, transitions, feedback?
-  - State changes (loading, empty, error, success)?
-  → Prompt: "When user [action], make it [behavior]..."
-
-Layer 5: Details & Polish
-  - Edge cases, empty states, error handling?
-  - Micro-interactions, hover effects, loading states?
-  - Accessibility considerations?
-  → Prompt: "Add polish: [specific refinements]..."
-
-Layer 6: Data & Logic (if applicable)
-  - Where does data come from?
-  - What computations or transformations happen?
-  - State management approach?
-  → Prompt: "Wire up the data so that [logic]..."
-```
-
-Not every layer applies to every project. Skip what's not relevant. The order isn't sacred either — adapt to what makes sense for the specific project.
-
-**Domain-specific overrides** — For some domains, the generic 6-layer framework needs adjustment:
-
-- **Games**: Replace Layer 3 (Visual Design) with "Core Loop & Feel" (the minute-to-minute cycle,
-  game feel, juice). Add a "Balance & Numbers" layer (progression formulas, economy tuning).
-  Work backwards from the MDA "Aesthetics" layer — what emotions should the player feel?
-
-- **APIs / Backend**: Replace Layer 3 (Visual Design) with "API Surface & Contracts" (endpoints,
-  request/response shapes, error model). Replace Layer 4 (Interaction) with "Operational Contracts"
-  (auth, rate limits, pagination, idempotency). The data model (Layer 6) becomes Layer 1.
-
-- **AI Products**: Add a "System Prompt Architecture" layer (identity, tools, rules — the 3-layer
-  structure). Add a "Context Pipeline" layer (what data flows in, when, from where). Replace
-  Layer 6 (Data & Logic) with "Model Strategy & Token Economics". The invisible layer IS the product.
+For the full framework with prompt templates per layer, read `references/prompt-patterns.md`.
 
 ### Phase 4: Write the prompts
 
-#### Choosing the right prompt pattern
+Write like you're describing the feature to a colleague over coffee, not writing a spec.
+**Destination, not route** — "Make a sidebar that slides in" beats "Use CSS transform translateX".
 
-Different situations call for different prompt structures. Don't always default to the same
-format — match the pattern to what the user is trying to accomplish:
+Key principles:
+- **Reference real things** — "Think Stripe's landing page energy" conveys more than abstract descriptions
+- **Include a "done" condition** — "You'll know it's working when you see..."
+- **Include a not-to-do** — "Don't add authentication yet" prevents scope creep
+- **Make them composable** — Each prompt works alone but builds on previous ones
 
-| Pattern | When to use | One-line description |
-|---|---|---|
-| **Intent-first** | Most cases — the default | Start with why, then what, let AI figure out how |
-| **Spec-driven** | Complex projects, multiple components | Define data model, constraints, and acceptance criteria upfront |
-| **Iterative chain** | Multi-step builds | Break into sequential prompts, each building on the last |
-| **Not-to-dos** | When scope creep is a risk | Explicitly state what NOT to do — often more useful than what TO do |
-| **Example-driven** | When format/style matters | Show input→output pairs instead of describing the rule |
-| **Test-first** | When correctness is critical | Write acceptance tests first, then ask AI to implement |
-| **PRD generator** | Physical products, product specs | Vision + user + constraints + success metrics → full PRD |
-| **Design brief** | Industrial design, physical form | Sensory targets + references + must-nots → design direction |
-| **Experience-to-Spec** | Feel → engineering parameters | Translate "premium feel" into measurable Ra/Nm/dB values |
-| **GDD generator** | Games | Core loop + progression + balance → Game Design Document |
-| **System prompt** | AI products | Identity + tools + rules → 3-layer system prompt architecture |
-| **API contract** | Backends, APIs | Data model + endpoints + error design → API specification |
+Use this format for each prompt:
 
-For detailed examples of each pattern, read `references/prompt-patterns.md`.
-
-#### Prompt writing principles
-
-1. **Speak human** — Write like you're describing the feature to a colleague over coffee, not
-   like you're writing a technical spec. "Make the cards stack on top of each other on phones"
-   beats "Implement a responsive flex-column layout for mobile viewports."
-
-2. **Be specific about the result, flexible about the method** — "The sidebar should slide in
-   from the left with a smooth animation" is better than "Use CSS transform translateX with a
-   300ms ease-out transition." Let the AI pick the implementation.
-
-3. **Reference real things** — "Think of how Apple's checkout page feels" or "Like the way
-   Linear handles keyboard shortcuts." Real references convey more nuance than abstract
-   descriptions.
-
-4. **Show, don't just tell** — When possible, describe the user experience: "When I tap a card,
-   it expands to fill the screen with a satisfying spring animation, and the content fades in."
-
-5. **Include the why** — Especially for learning prompts, explain why a decision was made. "Use a
-   skeleton loader here instead of a spinner — the content structure is predictable, so showing
-   the shape reduces perceived load time."
-
-6. **Make them composable** — Each prompt should work on its own but also build on previous ones.
-   A user should be able to skip steps or reorder them.
-
-#### Before / After examples
-
-**Example A — Landing page hero section:**
-
-Bad (spec-speak):
-> Create a responsive hero section with a 2-column grid layout. The left column should contain
-> an H1 heading (font-size: 48px, font-weight: 700) and a CTA button with a primary color
-> background (#4F46E5). The right column should display a product screenshot with a CSS
-> box-shadow of 0 25px 50px -12px rgba(0,0,0,0.25). Use Framer Motion for the entrance
-> animation with staggered fade-in.
-
-Good (human speak):
-> Make a hero section that makes people stop scrolling. Big bold headline on the left, something
-> that makes you feel "I need this." Under it a button that screams "click me." On the right, a
-> screenshot of the product floating above the background with a soft shadow — like it's lifting
-> off the page. Everything should fade in smoothly when the page loads, one piece at a time, like
-> cards being dealt. Think Stripe's landing page energy.
-
-**Example B — CLI tool (like RTK):**
-
-Bad (requirements doc):
-> Implement a command-line proxy in Rust that intercepts shell command output via process hooks.
-> Apply regex-based filtering strategies including: statistical extraction, error-only mode,
-> pattern grouping, deduplication, and intelligent truncation. Persist token metrics to SQLite
-> via rusqlite with bundled mode. CLI parsing via clap v4 derive macros.
-
-Good (conversational):
-> Help me build a Rust CLI tool — think of it as a "noise canceling headphone" for terminal
-> output. When AI coding tools run commands like git status or cargo test, they get flooded with
-> boilerplate that wastes LLM tokens. My tool sits in the middle, strips the noise, keeps the
-> signal. The user never knows it's there — commands run normally but the output is magically
-> shorter and more useful. It should be a single binary, start instantly, and if anything goes
-> wrong it just gets out of the way and lets the raw command through.
-
-#### Prompt format — give the user this structure for each prompt:
-
-```markdown
+```
 ### Prompt [N]: [What this builds]
 
 > [The actual prompt text — ready to copy-paste]
 
-**What this adds:** [Brief explanation of what this step contributes]
-**Why this prompt works:** [For learning — explain the technique used]
-**Pro tip:** [Optional — a vibe coding insight this prompt demonstrates]
+**What this adds:** [What this step contributes]
+**Why this prompt works:** [The technique used — especially for learning]
+**Pro tip:** [Optional vibe coding insight]
 ```
 
-### Quality Gate — before you deliver
+For 12 specialized prompt patterns (Spec-driven, Iterative chain, Test-first, PRD generator,
+GDD generator, API contract, etc.), read `references/prompt-patterns.md`.
 
-Run this checklist on every prompt before handing it to the user. If any item fails, fix it:
+### Quality Gate
 
-1. **Could a non-technical person understand this prompt?** — If it contains framework-specific
-   jargon that the user didn't mention, rewrite in plain language. Exception: the user
-   explicitly asked for a technical prompt.
+Check every prompt before delivery:
 
-2. **Does it describe the destination, not the route?** — "Make a sidebar that slides in from
-   the left" (good) vs "Use CSS transform translateX" (bad). The AI knows the how. You provide
-   the what and why.
+1. Non-technical person could understand it? (unless user asked for technical)
+2. Describes destination, not route?
+3. Works on its own?
+4. Has a "done" condition?
+5. Has a not-to-do?
+6. Is the simplest version? (remove any sentence you can without losing quality)
+7. Explains why? (especially for learning)
 
-3. **Would this prompt work on its own?** — Each prompt should be self-contained enough that
-   someone could use it without the others. References to previous prompts are fine ("building on
-   the page from the last step"), but the core request should stand alone.
-
-4. **Is there a "done" condition?** — Can the user tell when the AI has completed the prompt
-   successfully? If not, add one: "You'll know it's working when you see..."
-
-5. **Did I include a not-to-do?** — At least one "don't" per prompt prevents scope creep.
-   "Don't add authentication yet" or "Skip the mobile layout for now."
-
-6. **Is this the simplest version?** — Could you remove a sentence and still get a good result?
-   If yes, remove it. Bloated prompts confuse; lean prompts focus.
-
-7. **Did I explain why?** — If the user is learning, every prompt should teach something. The
-   "Why this prompt works" section should reveal the technique, not just restate the content.
-
-Wrap up with:
-
-1. **Overview** — A one-paragraph summary of what the prompts will produce
-2. **The prompts** — Numbered, in the recommended order, using the format above
-3. **Suggested order vs. alternatives** — "I recommend this sequence, but if you want to skip ahead to the interactive parts, start from Prompt 4"
-4. **Next steps** — Suggestions for how to use these prompts:
-   - "Try them one by one and see what happens at each step"
-   - "Modify Prompt 3 to match your own brand colors"
-   - "Combine Prompts 2 and 5 if you want a simpler version"
+Wrap up with: overview paragraph → numbered prompts → suggested order vs alternatives → next steps.
 
 ## Edge Cases
 
-**Incomplete input** — User only has a partial screenshot or vague description. That's fine. Work with what you have, note what you're guessing, and ask the user to confirm or correct.
-
-**Massive project** — A full web app with dozens of features. Don't try to deconstruct everything. Ask the user which feature or section they care about, and focus there.
-
-**Something the user built themselves** — They want to "write it down as prompts for next time." This is actually easier — interview them about their decisions while building, then translate into prompts.
-
-**Multiple similar products** — "I want prompts that capture what makes these 3 apps good." Identify patterns across them and write prompts that synthesize the best ideas.
-
-**Remix ("X but for Y")** — "I want something like Uber but for dog walking." This is the most
-common real-world use case. Don't just deconstruct X and hand it to the user — the Y context
-changes everything. Explicitly: (1) deconstruct X's soul — what makes it work, (2) map X's
-patterns to Y's domain — what transfers, what doesn't, (3) identify Y-specific constraints
-that X never faced — these are where your prompts add the most value. The output should feel
-like a new product inspired by X, not a lazy clone.
-
-**"I just want to learn vibe coding"** — No specific project in mind. Pick a well-known product as a teaching example (ask what they use daily), walk through the deconstruction as a tutorial, and explain the prompt craft along the way.
+- **Incomplete input** — Work with what you have, note what you're guessing
+- **Massive project** — Ask which feature they care about, focus there
+- **User's own work** — Interview them about their decisions, translate to prompts
+- **Multiple products** — Identify cross-product patterns, synthesize the best ideas
+- **Remix ("X but for Y")** — Don't just clone X. Deconstruct X's soul, map patterns to Y's domain, identify Y-specific constraints. Output should feel like a new product inspired by X
+- **"I just want to learn vibe coding"** — Pick a well-known product they use daily, walk through as tutorial
 
 ## Known Pitfalls
 
-These are real issues that surfaced during testing. Guard against them:
-
-- **Over-deconstructing simple products.** A login page doesn't need 8 prompts. If the product is simple, use Minimal or Fast Track. You're not being lazy — you're being appropriate. Too many prompts for a simple thing confuses the user more than helps.
-
-- **Skipping Phase 2.** It's tempting to jump straight to deconstruction, especially when the user seems to know what they want. But "deconstruct Stripe" could mean "I want to learn API design" or "I want to build a payment system." The output is completely different. Always ask at least the purpose and output type.
-
-- **Ignoring the user's skill level.** A prompt full of architectural jargon ("use a hexagonal architecture with dependency inversion") is useless to someone who just wants to learn. Match the prompt language to the user — the Phase 2 probing questions help you calibrate.
-
-- **Missing the soul.** Every product has one thing that makes it *it*. Linear's soul is "keyboard-first speed", Notion's is "blocks as LEGO", Stripe's is "developer is the user". If your prompts don't capture this, they could be for any generic product. Name the soul explicitly in the output.
-
-- **Foundation Prompt bloat.** The foundation prompt should be lean — tech stack, structure, base styles, conventions. Don't sneak in feature implementation. A bloated foundation prompt overwhelms the user and defeats the purpose of incremental prompts.
-
-## Important Mindset
-
-You're not just writing prompts — you're teaching the user how to think in prompts. Every prompt you write should help them understand *why* it's phrased that way. The goal is that eventually they won't need this skill anymore.
-
-Be curious, be thorough, and don't be afraid to say "I'm not sure about this part — can you tell me more about what happens when...?"
+- **Over-deconstructing simple products** — A login page doesn't need 8 prompts
+- **Skipping Phase 2** — "Deconstruct Stripe" could mean learn API design or build payments — totally different outputs
+- **Missing the soul** — Linear = "keyboard-first speed", Notion = "blocks as LEGO", Stripe = "developer is user". Name it explicitly
+- **Foundation Prompt bloat** — Keep it lean (stack, structure, styles, conventions). No feature implementation
