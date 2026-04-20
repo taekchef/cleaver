@@ -7,8 +7,12 @@
 </p>
 
 <p align="center">
+  <strong>English</strong> | <a href="./README.zh-CN.md">中文</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/tested-13_scenarios-green" />
-  <img src="https://img.shields.io/badge/pass_rate-100%25-brightgreen" />
+  <img src="https://img.shields.io/badge/pass_rate-107/107_assertions-brightgreen" />
   <img src="https://img.shields.io/badge/domains-10-blue" />
   <img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
@@ -24,6 +28,34 @@ Vibe coding is powerful, but most people struggle with **writing good prompts**.
 Cleaver solves this by studying products that already work — extracting the **prompts that would have built them**. You learn by reverse-engineering the best.
 
 It's like having a senior prompt engineer sitting next to you, saying: "See how Stripe handles errors? Here's the prompt that produces that. Here's why it works. Here's what most people get wrong."
+
+---
+
+## Proof it works
+
+### 13-Scenario Benchmark
+
+13 test scenarios, each graded on 9 quality dimensions. Green = with Cleaver, Gray = without.
+
+<img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
+
+**Key numbers:**
+- With Cleaver: **79%** average pass rate | Without: **32%** | **+47pp improvement**
+- Biggest gains: CLI Tool (+78pp), Design System (+67pp), AI Product / Game / Mobile App (+56pp)
+
+### Quality Dimension Breakdown
+
+<img src="./docs/dimensions.svg" alt="dimension coverage chart" width="100%" />
+
+**Where Cleaver adds the most:**
+
+| Dimension | With Cleaver | Without | Gap |
+|-----------|-------------|---------|-----|
+| Why Annotations (teaching) | 12/13 (92%) | 0/13 (0%) | **+92pp** |
+| Done Criteria (acceptance) | 5/13 (38%) | 0/13 (0%) | **+38pp** |
+| Pro Tips (practical insight) | 9/13 (69%) | 3/13 (23%) | **+46pp** |
+| Build Order (sequencing) | 7/13 (54%) | 1/13 (8%) | **+46pp** |
+| Soul Capture (core identity) | 13/13 (100%) | 4/13 (31%) | **+69pp** |
 
 ---
 
@@ -54,14 +86,14 @@ It adapts to **what you want**:
 
 ## 10 Domains
 
-Cleaver has domain-specific deconstruction strategies for:
-
 | | | | | |
 |---|---|---|---|---|
 | Web App / SaaS | Mobile App | Landing Page | Animation | CLI Tool |
 | Design System | Game | API / Backend | AI Product | Service / Physical |
 
 Each domain has its own analysis framework — games use MDA, APIs use contract-driven design, AI products use system prompt architecture, services use blueprint methodology.
+
+---
 
 ## Install
 
@@ -83,20 +115,26 @@ Then in Claude Code, just say what you want to deconstruct:
 ### Minimal Path — Notion (3 sentences)
 
 ```
-做一个万物皆 block 的协作工具。核心是"乐高式自由"——页面里嵌页面，数据库变看板，AI 随叫随到。
-技术灵魂：block 为原子单元的图数据库引擎 + OT/CRDT 实时协同。
-一句话：卖的不是功能，是你可以自己搭的创造力。
+做一个"万物皆 block"的工作空间：每一段文字、每一张图、每一行数据库都是同一颗原子积木，
+可以嵌套、拖拽、变形、关联——像乐高一样拼出笔记、文档、看板、日历、Wiki 任何形态。
+打开是一张白纸，干净到没有存在感，但底层是一个图结构的数据库引擎，
+让个人和团队在同一块画布上实时协作、自定义任何工作流。
+不要做固定模板的 SaaS，要做用户自己造工具的平台——Notion 卖的不是功能，是"你可以自己搭"的创造力。
 ```
 
 ### Fast Track — "Tinder for restaurants" (verbal-only, 3 prompts)
 
 User says: "全屏卡片左右滑选餐厅" — Cleaver infers the product archetype, identifies it as a "decision fatigue killer", and generates a Foundation Prompt + 2 feature prompts for a React Native swipe-card app.
 
+→ [Full output](examples/tinder-restaurant.md)
+
 ### Standard Build — Stripe API (6 prompts)
 
 Full API design teardown: philosophy, data model, API surface (CRUD five-tuple, cursor pagination, expand), operational contracts (idempotency, webhook signatures), error model (three-layer classification with doc_url), and developer experience design.
 
-See [`examples/`](examples/) for complete outputs.
+→ [Full output](examples/stripe-api.md)
+
+---
 
 ## How it works
 
@@ -120,23 +158,24 @@ Physical obj ──┘
 
 ```
 cleaver/
-├── SKILL.md                          # Main skill (423 lines)
+├── SKILL.md                    # Main skill (140 lines)
+├── README.md                   # This file
+├── README.zh-CN.md             # Chinese README
+├── LICENSE                     # MIT
+├── docs/
+│   ├── benchmark.svg           # 13-scenario comparison chart
+│   ├── dimensions.svg          # 9-dimension coverage chart
+│   └── generate_charts.py      # Chart generation script
 ├── references/
-│   ├── domain-strategies.md          # 10 domain-specific strategies (800 lines)
-│   └── prompt-patterns.md            # 12 prompt pattern templates (729 lines)
-└── examples/                         # Sample outputs
-    ├── stripe-api.md                 # API/Backend — Standard Build
-    ├── tinder-restaurant.md          # Verbal-only — Fast Track
-    └── notion-minimal.md             # Minimal Path — 3 sentences
+│   ├── domain-strategies.md    # 10 domain strategies (800 lines)
+│   └── prompt-patterns.md      # 12 prompt patterns (744 lines)
+└── examples/
+    ├── stripe-api.md           # API/Backend — Standard Build
+    ├── tinder-restaurant.md    # Verbal-only — Fast Track
+    └── notion-minimal.md       # Minimal Path — 3 sentences
 ```
 
-## Quality
-
-Tested across 13 scenarios covering all 5 paths, 10 domains, and 2 edge cases:
-
-- **107/107 assertions pass** (9 quality dimensions per eval)
-- Every output has: product analysis, done criteria, "why this works" annotations, pro tips, build order
-- Domain frameworks applied correctly: MDA for games, API Contract for backends, Service Blueprint for services, System Prompt Architecture for AI products
+---
 
 ## License
 
