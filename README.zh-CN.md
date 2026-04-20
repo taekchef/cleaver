@@ -173,6 +173,12 @@ npx skills add taekchef/cleaver
 
 → [完整输出](examples/wordle-game.md)
 
+### 学习深潜 — Perplexity（6 个 prompt，带注释）
+
+AI 产品拆解，含系统 prompt 架构分析：识别灵魂为"每个回答都有证据"，构建 RAG 管道 → 搜索 UI → 引用交互 → 追问线程 → 体验打磨。每个 prompt 附带"为什么这样写"的教学注释。
+
+→ [完整输出](examples/perplexity-ai-product.md)
+
 ---
 
 ## 工作原理

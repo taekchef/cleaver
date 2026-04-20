@@ -172,6 +172,12 @@ Game deconstruction using MDA framework: identifies "one sentence to explain rul
 
 → [Full output](examples/wordle-game.md)
 
+### Learning Deep-Dive — Perplexity (6 prompts, annotated)
+
+AI product deconstruction with system prompt architecture: identifies "every answer has evidence" as the soul, builds RAG pipeline → search UI → citation interaction → follow-up threads → polish. Each prompt explains why it works — this path teaches prompt thinking.
+
+→ [Full output](examples/perplexity-ai-product.md)
+
 ---
 
 ## How it works

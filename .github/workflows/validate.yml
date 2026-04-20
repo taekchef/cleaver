@@ -1,0 +1,30 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md syntax
+        run: head -1 SKILL.md | grep -q "^---"
+
+      - name: Check chart script syntax
+        run: python3 -m py_compile docs/generate_charts.py
+
+      - name: Check benchmark script syntax
+        run: python3 -m py_compile evals/build_benchmark.py
+
+      - name: Regenerate benchmark
+        run: python3 evals/build_benchmark.py
+
+      - name: Regenerate charts
+        run: python3 docs/generate_charts.py
+
+      - name: Check generated files are committed
+        run: git diff --exit-code evals/benchmark.json docs/benchmark.svg docs/dimensions.svg
