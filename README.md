@@ -15,6 +15,18 @@
 
 ---
 
+## Why Cleaver?
+
+Vibe coding is powerful, but most people struggle with **writing good prompts**. They either:
+- Write vague prompts ("make a dashboard") → generic output
+- Write over-specified prompts ("use CSS grid with 3 columns...") → fight with the AI
+
+Cleaver solves this by studying products that already work — extracting the **prompts that would have built them**. You learn by reverse-engineering the best.
+
+It's like having a senior prompt engineer sitting next to you, saying: "See how Stripe handles errors? Here's the prompt that produces that. Here's why it works. Here's what most people get wrong."
+
+---
+
 ## What it does
 
 Give Cleaver **any product** — a screenshot, a URL, a code repo, a verbal description, even a physical object — and it will:

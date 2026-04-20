@@ -1,3 +1,11 @@
+# "Tinder for restaurants" — Fast Track (Verbal-only)
+
+**Input:** "全屏卡片左右滑选餐厅"
+**Path:** Fast Track (3 prompts)
+**Note:** No product name given — Cleaver inferred the archetype from verbal description
+
+---
+
 # Cleaver 拆解结果：美食 Tinder（餐厅滑卡选择器）
 
 ## 概述

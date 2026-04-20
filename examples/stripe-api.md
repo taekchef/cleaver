@@ -1,3 +1,11 @@
+# Stripe API — Standard Build
+
+**Input:** "拆解 Stripe 的 API 设计理念"
+**Path:** Standard Build (6 prompts)
+**Domain:** API / Backend (API Contract pattern)
+
+---
+
 # Stripe API 设计理念拆解 — 可复用 Prompt 模板
 
 > 基于 Cleaver 技能（API Contract 模式 + API/Backend 领域策略）拆解 Stripe 的 API 设计哲学，
