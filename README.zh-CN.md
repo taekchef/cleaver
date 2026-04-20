@@ -141,6 +141,10 @@ npx skills add taekchef/cleaver
 
 ## 示例
 
+### 坏 prompt vs 牛刀 prompt — Linear
+
+完整对比：[坏 vs 牛刀 — Linear](examples/bad-vs-cleaver-linear.md)
+
 ### 极简路径 — Notion（3 句话）
 
 ```
@@ -181,7 +185,7 @@ URL     ──┤
                                 ► 质量门禁（按路径分级）
 ```
 
-**12 种 prompt 模式**：Intent-first、Spec-driven、Iterative chain、Not-to-dos、Example-driven、Test-first、PRD generator、Design brief、Experience-to-Spec、GDD generator、System prompt、API contract。详见 [`references/prompt-patterns.md`](references/prompt-patterns.md)。
+**12 种 prompt 模式**：Intent-first、Spec-driven、Iterative chain、Not-to-dos、Example-driven、Test-first、PRD generator、Design brief、Experience-to-Spec、GDD generator、System prompt、API contract。详见 [`references/patterns/build-prompts.md`](references/patterns/build-prompts.md)、[`product-docs.md`](references/patterns/product-docs.md)、[`technical-contracts.md`](references/patterns/technical-contracts.md)。
 
 ---
 
@@ -213,6 +217,7 @@ cleaver/
 │       ├── product-docs.md        # 模式 7-10（PRD、Design Brief、GDD 等）
 │       └── technical-contracts.md # 模式 11-12（System Prompt、API Contract）
 └── examples/
+    ├── bad-vs-cleaver-linear.md  # 坏 vs 牛刀对比
     ├── stripe-api.md           # API/Backend — 标准构建
     ├── tinder-restaurant.md    # 口头描述 — 快速路径
     └── notion-minimal.md       # 极简路径 — 3 句话

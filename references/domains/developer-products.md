@@ -139,39 +139,6 @@ the user might have meant."
 
 ---
 
-
 ---
 
-## Choosing the Right Strategy
-
-When you identify the project's domain, ask yourself:
-
-1. **What domain?** — 10 domains: CLI Tools, Web Apps, Landing Pages, Animations, Design Systems,
-   Mobile Apps, Physical Products, Games, API/Backend, AI/ML Products. Some products span multiple
-   domains (Tesla = vehicle + dashboard UI + autonomous agent) — ask which aspect the user cares about,
-   or cover each in separate prompt sets.
-
-2. **What sub-type is this?** — Most projects fit one sub-type clearly. If it's a hybrid, decompose
-   by the dominant sub-type and note the secondary influences. Games are often genre hybrids (Hades =
-   roguelike + action RPG + narrative).
-
-3. **What output does the user want?** — Code prompts? PRD? Design brief? Game Design Document?
-   API spec? System prompt? This determines everything about how you write the prompts. AI products
-   can output code (the wrapper), a system prompt (the invisible layer), or an architecture spec
-   (the full stack).
-
-4. **What's the deconstruction priority?** — Each domain has a different "what matters most."
-   Productivity tools → interaction model. Games → core loop + feel. Landing pages → emotional arc.
-   APIs → data model + error design. AI products → system prompt + context pipeline. Physical
-   products → sensory + interaction loop. Get this wrong and the prompts will feel off.
-
-5. **Where does complexity live?** — Is the hard part the data model (APIs), the interaction design
-   (web/mobile), the game balance (games), the prompt architecture (AI products), the physical feel
-   (hardware), or the service process (experiences)? Focus your detailed prompts on where the
-   complexity is.
-
-6. **What would the user miss if they built it without this skill?** — That's what your prompts
-   need to capture. The obvious stuff doesn't need detailed prompts. The non-obvious stuff does:
-   why Linear feels fast (keyboard-first design), why Stripe feels premium (micro-interactions),
-   why Hades is addictive (core loop + meta-progression), why Perplexity cites sources (RAG pipeline,
-   not just system prompt), why the iPhone feels designed for your hand (material + weight + radius).
+See shared decision framework in any domain file under "Choosing the Right Strategy".

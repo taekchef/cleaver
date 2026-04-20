@@ -213,8 +213,9 @@ platform? Include this in the first prompt. It fundamentally changes every subse
 
 ---
 
-
 ---
+
+See shared decision framework in any domain file under "Choosing the Right Strategy".
 
 ## Choosing the Right Strategy
 

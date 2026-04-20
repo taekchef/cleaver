@@ -140,6 +140,10 @@ Then in Claude Code, just say what you want to deconstruct:
 
 ## Examples
 
+### Bad prompt vs Cleaver prompt — Linear
+
+See the full comparison: [Bad vs Cleaver — Linear](examples/bad-vs-cleaver-linear.md)
+
 ### Minimal Path — Notion (3 sentences)
 
 ```
@@ -180,7 +184,7 @@ Physical obj ──┘    (infer, don't ask)
                                          ► Quality Gate (path-specific)
 ```
 
-**12 prompt patterns**: Intent-first, Spec-driven, Iterative chain, Not-to-dos, Example-driven, Test-first, PRD generator, Design brief, Experience-to-Spec, GDD generator, System prompt, API contract. See [`references/prompt-patterns.md`](references/prompt-patterns.md).
+**12 prompt patterns**: Intent-first, Spec-driven, Iterative chain, Not-to-dos, Example-driven, Test-first, PRD generator, Design brief, Experience-to-Spec, GDD generator, System prompt, API contract. See [`references/patterns/build-prompts.md`](references/patterns/build-prompts.md), [`product-docs.md`](references/patterns/product-docs.md), [`technical-contracts.md`](references/patterns/technical-contracts.md).
 
 ## Architecture
 
@@ -210,6 +214,7 @@ cleaver/
 │       ├── product-docs.md        # Patterns 7-10 (PRD, Design Brief, GDD, etc.)
 │       └── technical-contracts.md # Patterns 11-12 (System Prompt, API Contract)
 └── examples/
+    ├── bad-vs-cleaver-linear.md  # Bad vs Cleaver comparison
     ├── stripe-api.md           # API/Backend — Standard Build
     ├── tinder-restaurant.md    # Verbal-only — Fast Track
     └── notion-minimal.md       # Minimal Path — 3 sentences
