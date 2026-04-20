@@ -186,17 +186,29 @@ Physical obj ──┘    (infer, don't ask)
 
 ```
 cleaver/
-├── SKILL.md                    # Main skill (180 lines)
+├── SKILL.md                    # Main skill (190 lines)
 ├── README.md                   # This file
 ├── README.zh-CN.md             # Chinese README
 ├── LICENSE                     # MIT
+├── evals/
+│   ├── benchmark.json          # Aggregated eval results
+│   ├── rubric.md               # 12-dimension scoring criteria
+│   └── build_benchmark.py      # Reads grading JSONs, outputs benchmark.json
 ├── docs/
 │   ├── benchmark.svg           # 16-scenario comparison chart
 │   ├── dimensions.svg          # 12-dimension coverage chart
-│   └── generate_charts.py      # Chart generation script
+│   └── generate_charts.py      # Reads benchmark.json → generates SVGs
 ├── references/
-│   ├── domain-strategies.md    # 10 domain strategies
-│   └── prompt-patterns.md      # 12 prompt patterns
+│   ├── domains/
+│   │   ├── digital-products.md    # Web/SaaS, Landing Page, Mobile
+│   │   ├── developer-products.md  # CLI, API/Backend
+│   │   ├── creative-systems.md    # Game, Animation, Design System
+│   │   ├── ai-products.md         # AI/ML Products
+│   │   └── physical-services.md   # Physical products & services
+│   └── patterns/
+│       ├── build-prompts.md       # Patterns 1-6 (Intent-first, Spec-driven, etc.)
+│       ├── product-docs.md        # Patterns 7-10 (PRD, Design Brief, GDD, etc.)
+│       └── technical-contracts.md # Patterns 11-12 (System Prompt, API Contract)
 └── examples/
     ├── stripe-api.md           # API/Backend — Standard Build
     ├── tinder-restaurant.md    # Verbal-only — Fast Track

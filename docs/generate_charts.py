@@ -1,70 +1,14 @@
-"""Generate benchmark SVG charts for Cleaver README — 16 scenarios, 12 dimensions."""
+"""Generate benchmark SVG charts for Cleaver README — reads from evals/benchmark.json."""
 import json
 import os
 
-# ── Combined data: 13 existing + 3 new ──────────────────────────────────────
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BENCHMARK_PATH = os.path.join(REPO_ROOT, "evals", "benchmark.json")
 
-COMPARISON = {
-    # Existing 13 (9-dim pass rates, will recalculate for 12)
-    "eval-ai-product":    {"with": 0.89, "without": 0.33},
-    "eval-animation":     {"with": 0.67, "without": 0.22},
-    "eval-api-backend":   {"with": 0.78, "without": 0.56},
-    "eval-cli-tool":      {"with": 1.00, "without": 0.22},
-    "eval-design-system": {"with": 0.89, "without": 0.22},
-    "eval-fasttrack-path":{"with": 0.67, "without": 0.22},
-    "eval-game":          {"with": 0.89, "without": 0.33},
-    "eval-learning-path": {"with": 1.00, "without": 0.78},
-    "eval-minimal-path":  {"with": 0.22, "without": 0.22},
-    "eval-mobile-app":    {"with": 0.89, "without": 0.33},
-    "eval-multi-product": {"with": 0.67, "without": 0.33},
-    "eval-service":       {"with": 0.78, "without": 0.33},
-    "eval-verbal-only":   {"with": 0.67, "without": 0.22},
-    # New 3 (12-dim graded)
-    "eval-landing-page":  {"with": 1.00, "without": 0.33},
-    "eval-web-app":       {"with": 1.00, "without": 0.33},
-    "eval-remix":         {"with": 1.00, "without": 0.42},
-}
-
-LABELS = {
-    "eval-ai-product": "AI Product",
-    "eval-animation": "Animation",
-    "eval-api-backend": "API/Backend",
-    "eval-cli-tool": "CLI Tool",
-    "eval-design-system": "Design System",
-    "eval-fasttrack-path": "Fast Track",
-    "eval-game": "Game",
-    "eval-learning-path": "Learning",
-    "eval-minimal-path": "Minimal",
-    "eval-mobile-app": "Mobile App",
-    "eval-multi-product": "Multi-Product",
-    "eval-service": "Service",
-    "eval-verbal-only": "Verbal Only",
-    "eval-landing-page": "Landing Page",
-    "eval-web-app": "Web App",
-    "eval-remix": "Remix",
-}
-
-# Mark new evals for visual distinction
+# New evals for visual distinction
 NEW_EVALS = {"eval-landing-page", "eval-web-app", "eval-remix"}
 
-# Dimension data: old 13 + new 3 = 16 total
-DIMENSIONS = {
-    "Product Analysis":  {"with": 11+3, "without": 13+3, "total": 16},
-    "Multiple Prompts":  {"with": 12+3, "without": 7+3,  "total": 16},
-    "Done Criteria":     {"with": 5+3,  "without": 0+0,  "total": 16},
-    "Why Annotations":   {"with": 12+3, "without": 0+0,  "total": 16},
-    "Pro Tips":          {"with": 9+3,  "without": 3+0,  "total": 16},
-    "Build Order":       {"with": 7+3,  "without": 1+0,  "total": 16},
-    "Domain Framework":  {"with": 8+3,  "without": 5+1,  "total": 16},
-    "Not-To-Do":         {"with": 13+3, "without": 6+0,  "total": 16},
-    "Soul Capture":      {"with": 13+3, "without": 4+3,  "total": 16},
-    "Destination Not Route": {"with": 0+3, "without": 0+0, "total": 3},
-    "Prompts Standalone": {"with": 0+3, "without": 0+3, "total": 3},
-    "Usage Guidance":    {"with": 0+3,  "without": 0+0,  "total": 3},
-}
-
-# For the new 3 dimensions, we only tested 3 scenarios.
-# Show only those 3 for the new dims, all 16 for old dims.
+# Old 9 dims (tested on 16 scenarios) vs new 3 dims (tested on 3)
 OLD_DIMS = ["Product Analysis", "Multiple Prompts", "Done Criteria", "Why Annotations",
             "Pro Tips", "Build Order", "Domain Framework", "Not-To-Do", "Soul Capture"]
 NEW_DIMS = ["Destination Not Route", "Prompts Standalone", "Usage Guidance"]
@@ -77,13 +21,19 @@ TEXT = "#1e293b"
 TEXT_LIGHT = "#64748b"
 
 
-def gen_benchmark_svg():
+def load_benchmark():
+    with open(BENCHMARK_PATH) as f:
+        return json.load(f)
+
+
+def gen_benchmark_svg(data):
     W, H = 1100, 520
     ML, MR, MT, MB = 70, 30, 55, 100
     CW = W - ML - MR
     CH = H - MT - MB
 
-    n = len(COMPARISON)
+    scenarios = data["scenarios"]
+    n = len(scenarios)
     gw = CW / n
     bw = 22
     gap = 4
@@ -100,27 +50,27 @@ def gen_benchmark_svg():
         lines.append(f'<line x1="{ML}" y1="{y}" x2="{W-MR}" y2="{y}" stroke="#e2e8f0" stroke-width="1"/>')
         lines.append(f'<text x="{ML-8}" y="{y+4}" text-anchor="end" font-size="10" fill="{TEXT_LIGHT}">{pct}%</text>')
 
-    for i, (key, vals) in enumerate(COMPARISON.items()):
+    for i, (key, vals) in enumerate(scenarios.items()):
         gx = ML + i * gw
         x1 = gx + bar_offset
         x2 = x1 + bw + gap
 
         fill_color = ORANGE if key in NEW_EVALS else GREEN
 
-        h1 = vals["with"] * CH
+        h1 = vals["with_skill"]["pass_rate"] * CH
         y1 = MT + CH - h1
         lines.append(f'<rect x="{x1:.1f}" y="{y1:.1f}" width="{bw}" height="{h1:.1f}" fill="{fill_color}" rx="3"/>')
 
-        h2 = vals["without"] * CH
+        h2 = vals["without_skill"]["pass_rate"] * CH
         y2 = MT + CH - h2
         lines.append(f'<rect x="{x2:.1f}" y="{y2:.1f}" width="{bw}" height="{h2:.1f}" fill="{GRAY}" rx="3"/>')
 
-        delta = vals["with"] - vals["without"]
+        delta = vals["with_skill"]["pass_rate"] - vals["without_skill"]["pass_rate"]
         if delta > 0:
             delta_text = f"+{int(delta*100)}"
             lines.append(f'<text x="{gx + gw/2:.1f}" y="{y1-5:.1f}" text-anchor="middle" font-size="8" font-weight="600" fill="{fill_color}">{delta_text}</text>')
 
-        label = LABELS[key]
+        label = vals["label"]
         cx = gx + gw / 2
         lines.append(f'<text x="{cx:.1f}" y="{MT+CH+16:.1f}" text-anchor="middle" font-size="9" fill="{TEXT}" transform="rotate(40 {cx:.1f} {MT+CH+16:.1f})">{label}</text>')
 
@@ -139,7 +89,7 @@ def gen_benchmark_svg():
     return '\n'.join(lines)
 
 
-def gen_dimensions_svg():
+def gen_dimensions_svg(data):
     W, H = 850, 500
     ML, MR, MT, MB = 150, 40, 50, 30
     CW = W - ML - MR
@@ -147,6 +97,7 @@ def gen_dimensions_svg():
 
     # Combine old + new dimensions
     all_dims = OLD_DIMS + NEW_DIMS
+    dimensions = data["dimensions"]
     n = len(all_dims)
     row_h = CH / n
     bar_h = 16
@@ -172,22 +123,22 @@ def gen_dimensions_svg():
         display_name = f"{name} *" if name in NEW_DIMS else name
         lines.append(f'<text x="{ML-10}" y="{cy+4:.1f}" text-anchor="end" font-size="11" fill="{TEXT}">{display_name}</text>')
 
-        vals = DIMENSIONS[name]
+        vals = dimensions[name]
 
         # with_skill bar
         y1 = y_base + bar_offset
-        w1 = (vals["with"] / vals["total"]) * CW
+        w1 = (vals["with_skill"]["passed"] / vals["with_skill"]["total"]) * CW
         lines.append(f'<rect x="{ML}" y="{y1:.1f}" width="{w1:.1f}" height="{bar_h}" fill="{GREEN}" rx="3"/>')
-        lines.append(f'<text x="{ML+w1+5:.1f}" y="{y1+bar_h-2:.1f}" font-size="9" font-weight="600" fill="{GREEN}">{vals["with"]}/{vals["total"]}</text>')
+        lines.append(f'<text x="{ML+w1+5:.1f}" y="{y1+bar_h-2:.1f}" font-size="9" font-weight="600" fill="{GREEN}">{vals["with_skill"]["passed"]}/{vals["with_skill"]["total"]}</text>')
 
         # without_skill bar
         y2 = y1 + bar_h + bar_gap
-        w2 = (vals["without"] / vals["total"]) * CW
+        w2 = (vals["without_skill"]["passed"] / vals["without_skill"]["total"]) * CW
         lines.append(f'<rect x="{ML}" y="{y2:.1f}" width="{w2:.1f}" height="{bar_h}" fill="{GRAY}" rx="3"/>')
-        if vals["without"] > 0:
-            lines.append(f'<text x="{ML+w2+5:.1f}" y="{y2+bar_h-2:.1f}" font-size="9" fill="{TEXT_LIGHT}">{vals["without"]}/{vals["total"]}</text>')
+        if vals["without_skill"]["passed"] > 0:
+            lines.append(f'<text x="{ML+w2+5:.1f}" y="{y2+bar_h-2:.1f}" font-size="9" fill="{TEXT_LIGHT}">{vals["without_skill"]["passed"]}/{vals["without_skill"]["total"]}</text>')
         else:
-            lines.append(f'<text x="{ML+5:.1f}" y="{y2+bar_h-2:.1f}" font-size="9" fill="{TEXT_LIGHT}">0/{vals["total"]}</text>')
+            lines.append(f'<text x="{ML+5:.1f}" y="{y2+bar_h-2:.1f}" font-size="9" fill="{TEXT_LIGHT}">0/{vals["without_skill"]["total"]}</text>')
 
     # Legend
     lx = W / 2 - 120
@@ -203,15 +154,16 @@ def gen_dimensions_svg():
 
 
 if __name__ == "__main__":
+    data = load_benchmark()
     out_dir = os.path.dirname(os.path.abspath(__file__))
 
-    svg1 = gen_benchmark_svg()
+    svg1 = gen_benchmark_svg(data)
     path1 = os.path.join(out_dir, "benchmark.svg")
     with open(path1, "w") as f:
         f.write(svg1)
     print(f"Written: {path1}")
 
-    svg2 = gen_dimensions_svg()
+    svg2 = gen_dimensions_svg(data)
     path2 = os.path.join(out_dir, "dimensions.svg")
     with open(path2, "w") as f:
         f.write(svg2)

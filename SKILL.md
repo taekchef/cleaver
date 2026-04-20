@@ -58,7 +58,13 @@ If the source can't be fully inspected, say so and proceed from explicit assumpt
 Do not claim to know private roadmaps, internal prompts, or proprietary implementation details.
 
 Each input type needs a different lens. For detailed domain-specific analysis, read
-`references/domain-strategies.md`.
+only the relevant domain file:
+
+- Web/SaaS/Mobile/Landing Page → `references/domains/digital-products.md`
+- CLI/API/Backend → `references/domains/developer-products.md`
+- Game/Animation/Design System → `references/domains/creative-systems.md`
+- AI Product → `references/domains/ai-products.md`
+- Physical Product/Service → `references/domains/physical-services.md`
 
 - **Screenshot / image** — Visual hierarchy, component inventory, typography, colors, spacing, interaction hints
 - **URL / live website** — Info architecture, navigation, key interactions, responsive behavior, tech stack clues
@@ -98,7 +104,11 @@ Not every layer applies. Adapt the order per domain:
 - **APIs**: Replace Visual with "API Surface", replace Interaction with "Operational Contracts"
 - **AI Products**: Add "System Prompt Architecture" and "Context Pipeline" layers
 
-For the full framework with prompt templates per layer, read `references/prompt-patterns.md`.
+For the full framework with prompt templates per layer, read the relevant pattern file:
+
+- Build prompts → `references/patterns/build-prompts.md`
+- Product docs (PRD, brief, GDD) → `references/patterns/product-docs.md`
+- Technical contracts (system prompt, API spec) → `references/patterns/technical-contracts.md`
 
 ### Phase 4: Write the prompts
 
@@ -124,7 +134,9 @@ Use this format for each prompt:
 ```
 
 For 12 specialized prompt patterns (Spec-driven, Iterative chain, Test-first, PRD generator,
-GDD generator, API contract, etc.), read `references/prompt-patterns.md`.
+GDD generator, API contract, etc.), read `references/patterns/build-prompts.md` (patterns 1-6),
+`references/patterns/product-docs.md` (patterns 7-10), or `references/patterns/technical-contracts.md`
+(patterns 11-12).
 
 ### Quality Gate — per path
 

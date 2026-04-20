@@ -1,0 +1,2005 @@
+{
+  "metadata": {
+    "skill_name": "cleaver",
+    "version": "0.1.0",
+    "date": "2026-04-20",
+    "methodology": "Each scenario run with/without skill active, graded by Claude against 12-dimension rubric",
+    "grader": "claude-sonnet",
+    "scenarios_count": 16,
+    "old_dimensions": 9,
+    "new_dimensions": 12,
+    "note": "First 13 scenarios (iteration-4) tested on 9 dimensions. Last 3 (iteration-5) tested on all 12."
+  },
+  "scenarios": {
+    "eval-ai-product": {
+      "label": "AI Product",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 8,
+        "total": 9,
+        "pass_rate": 0.89
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 9,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-animation": {
+      "label": "Animation",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 6,
+        "total": 9,
+        "pass_rate": 0.67
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-api-backend": {
+      "label": "API/Backend",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 7,
+        "total": 9,
+        "pass_rate": 0.78
+      },
+      "without_skill": {
+        "passed": 5,
+        "total": 9,
+        "pass_rate": 0.56
+      }
+    },
+    "eval-cli-tool": {
+      "label": "CLI Tool",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 9,
+        "total": 9,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-design-system": {
+      "label": "Design System",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 8,
+        "total": 9,
+        "pass_rate": 0.89
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-fasttrack-path": {
+      "label": "Fast Track",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 6,
+        "total": 9,
+        "pass_rate": 0.67
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-game": {
+      "label": "Game",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 8,
+        "total": 9,
+        "pass_rate": 0.89
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 9,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-learning-path": {
+      "label": "Learning",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 9,
+        "total": 9,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 7,
+        "total": 9,
+        "pass_rate": 0.78
+      }
+    },
+    "eval-minimal-path": {
+      "label": "Minimal",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-mobile-app": {
+      "label": "Mobile App",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 8,
+        "total": 9,
+        "pass_rate": 0.89
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 9,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-multi-product": {
+      "label": "Multi-Product",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 6,
+        "total": 9,
+        "pass_rate": 0.67
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 9,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-service": {
+      "label": "Service",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 7,
+        "total": 9,
+        "pass_rate": 0.78
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 9,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-verbal-only": {
+      "label": "Verbal Only",
+      "iteration": 4,
+      "dimensions_tested": 9,
+      "with_skill": {
+        "passed": 6,
+        "total": 9,
+        "pass_rate": 0.67
+      },
+      "without_skill": {
+        "passed": 2,
+        "total": 9,
+        "pass_rate": 0.22
+      }
+    },
+    "eval-landing-page": {
+      "label": "Landing Page",
+      "iteration": 5,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 4,
+        "total": 12,
+        "pass_rate": 0.33
+      }
+    },
+    "eval-remix": {
+      "label": "Remix",
+      "iteration": 5,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 5,
+        "total": 12,
+        "pass_rate": 0.42
+      }
+    },
+    "eval-web-app": {
+      "label": "Web App",
+      "iteration": 5,
+      "dimensions_tested": 12,
+      "with_skill": {
+        "passed": 12,
+        "total": 12,
+        "pass_rate": 1.0
+      },
+      "without_skill": {
+        "passed": 4,
+        "total": 12,
+        "pass_rate": 0.33
+      }
+    }
+  },
+  "dimensions": {
+    "Product Analysis": {
+      "with_skill": {
+        "passed": 14,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 16,
+        "total": 16
+      }
+    },
+    "Multiple Prompts": {
+      "with_skill": {
+        "passed": 15,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 10,
+        "total": 16
+      }
+    },
+    "Done Criteria": {
+      "with_skill": {
+        "passed": 8,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 0,
+        "total": 16
+      }
+    },
+    "Why Annotations": {
+      "with_skill": {
+        "passed": 15,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 0,
+        "total": 16
+      }
+    },
+    "Pro Tips": {
+      "with_skill": {
+        "passed": 12,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 16
+      }
+    },
+    "Build Order": {
+      "with_skill": {
+        "passed": 10,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 1,
+        "total": 16
+      }
+    },
+    "Domain Framework": {
+      "with_skill": {
+        "passed": 11,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 6,
+        "total": 16
+      }
+    },
+    "Not-To-Do": {
+      "with_skill": {
+        "passed": 16,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 6,
+        "total": 16
+      }
+    },
+    "Soul Capture": {
+      "with_skill": {
+        "passed": 16,
+        "total": 16
+      },
+      "without_skill": {
+        "passed": 7,
+        "total": 16
+      }
+    },
+    "Destination Not Route": {
+      "with_skill": {
+        "passed": 3,
+        "total": 3
+      },
+      "without_skill": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "Prompts Standalone": {
+      "with_skill": {
+        "passed": 3,
+        "total": 3
+      },
+      "without_skill": {
+        "passed": 3,
+        "total": 3
+      }
+    },
+    "Usage Guidance": {
+      "with_skill": {
+        "passed": 3,
+        "total": 3
+      },
+      "without_skill": {
+        "passed": 0,
+        "total": 3
+      }
+    }
+  },
+  "grading": {
+    "eval-ai-product": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 17383 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 17383 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 17320 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 17320 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 17320 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 17320 chars of output"
+        }
+      ]
+    },
+    "eval-animation": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 4918 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 4918 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 4918 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 4918 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 5338 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 5338 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 5338 chars of output"
+        }
+      ]
+    },
+    "eval-api-backend": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 10160 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 10160 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 10160 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 9550 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 9550 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 9550 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 9550 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 9550 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 9550 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 9550 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 9550 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 9550 chars of output"
+        }
+      ]
+    },
+    "eval-cli-tool": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 28662 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 14640 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 14640 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 14640 chars of output"
+        }
+      ]
+    },
+    "eval-design-system": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 11020 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 11020 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 14228 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 14228 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 14228 chars of output"
+        }
+      ]
+    },
+    "eval-fasttrack-path": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 5625 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 5625 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 5625 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 5625 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 2495 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 2495 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 2495 chars of output"
+        }
+      ]
+    },
+    "eval-game": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": false,
+          "evidence": "Not found in 19113 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 19113 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 16443 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 16443 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 16443 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 16443 chars of output"
+        }
+      ]
+    },
+    "eval-learning-path": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 14219 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 12758 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 12758 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 12758 chars of output"
+        }
+      ]
+    },
+    "eval-minimal-path": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 249 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 249 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 249 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 265 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 265 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 265 chars of output"
+        }
+      ]
+    },
+    "eval-mobile-app": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 9727 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 9727 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 8224 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 8224 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 8224 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 8224 chars of output"
+        }
+      ]
+    },
+    "eval-multi-product": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 14490 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 14490 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 14490 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 14490 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 6942 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 6942 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 6942 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 6942 chars of output"
+        }
+      ]
+    },
+    "eval-service": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 10631 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 10631 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 10631 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 6198 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 6198 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 6198 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 6198 chars of output"
+        }
+      ]
+    },
+    "eval-verbal-only": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 3701 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 3701 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 3701 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "Found in 3701 chars of output"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Found in 5836 chars of output"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "Found in 5836 chars of output"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": false,
+          "evidence": "Not found in 5836 chars of output"
+        }
+      ]
+    },
+    "eval-landing-page": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "六层拆解表 + 产品灵魂分析"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "7 个 prompt（Prompt 0-6）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "每个 prompt 有'你会知道它对了，当你看到...'"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "每个 prompt 有 Why this prompt works 注释"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "每个 prompt 有 Pro tip"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Build Order section 含快速路径"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Landing Page 领域分析：Hero+Cards+CTA+Footer 结构"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "10 条 Not-to-Do 清单 + 每个 prompt 有'不要'"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'基础设施产品也能有视觉叙事' — 克制而非堆砌"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true,
+          "evidence": "'像 Vercel 一样干净'而非 CSS 属性列表"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "每个 prompt 含足够上下文"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true,
+          "evidence": "快速路径建议 + 替代路径说明"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "色彩系统、排版、组件风格分析"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "4 个 prompt（完整页+Hero+导航+Footer）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "无 done 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "无 why annotation"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "无 pro tips"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "无 build order"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "通用设计分析，无 Landing Page 专属框架"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "无 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'呼吸感' — 深色留白"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false,
+          "evidence": "大量精确 CSS 值和 hex 色值，过度指定技术实现"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "4 个独立 prompt"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false,
+          "evidence": "无使用建议"
+        }
+      ]
+    },
+    "eval-remix": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "Uber 六层拆解 + 灵魂映射表"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "4 个 prompt（Foundation + 3 feature）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "Prompt 2/3 有 'Done when' 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "每个有 'Why this prompt works'"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "每个有 Pro tip"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Build Order + 快速路径"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Remix 方法论：deconstruct X soul → map to Y → identify constraints"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "每个 prompt 有 3 个 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'即时确定性' → 遛狗场景映射"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true,
+          "evidence": "描述感觉而非实现"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "每个含足够上下文"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true,
+          "evidence": "执行顺序 + 快速路径 + 下一步"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "5 个 Uber 设计模式拆解"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "1 个大 prompt 含完整 spec"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "无 done 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "无 why annotation"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "无 pro tips"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "无 build order"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "跨域映射表（Uber→Dog Walking）"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "无 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "理解 Uber 核心 + 遛狗独特约束"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false,
+          "evidence": "大量技术细节和精确 spec"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "单 prompt 自包含"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false,
+          "evidence": "无使用建议"
+        }
+      ]
+    },
+    "eval-web-app": {
+      "with_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "五原则分析 + 六层拆解表 + 设计金字塔"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "8 个 prompt（Prompt 0-7）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": true,
+          "evidence": "每个 prompt 有'完成标准'"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": true,
+          "evidence": "每个有 'Why this prompt works'"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": true,
+          "evidence": "每个有 Pro tip"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": true,
+          "evidence": "Build Order section + 核心骨架 vs 增强层"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": true,
+          "evidence": "Web App/SaaS Productivity Tool 子类型分析"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": true,
+          "evidence": "每个 prompt 有'不要'列表"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'不挡路的项目管理工具'"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": true,
+          "evidence": "描述体验而非实现"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "每个含足够上下文"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": true,
+          "evidence": "执行顺序 + 替代路径 + 下一步"
+        }
+      ],
+      "without_skill": [
+        {
+          "text": "包含产品分析/拆解章节",
+          "passed": true,
+          "evidence": "视觉系统、组件清单、交互模式"
+        },
+        {
+          "text": "包含多个可用的重建 prompt（≥2）",
+          "passed": true,
+          "evidence": "1 个大 prompt（包含完整 spec）"
+        },
+        {
+          "text": "包含完成/验收标准",
+          "passed": false,
+          "evidence": "无 done 条件"
+        },
+        {
+          "text": "包含教学注释（为什么有效）",
+          "passed": false,
+          "evidence": "无 why annotation"
+        },
+        {
+          "text": "包含 Pro Tips / 实战洞察",
+          "passed": false,
+          "evidence": "无 pro tips"
+        },
+        {
+          "text": "包含构建顺序建议",
+          "passed": false,
+          "evidence": "无 build order"
+        },
+        {
+          "text": "使用领域专属分析框架",
+          "passed": false,
+          "evidence": "通用 web app 分析"
+        },
+        {
+          "text": "包含 Not-To-Do / 范围限制",
+          "passed": false,
+          "evidence": "无 not-to-do"
+        },
+        {
+          "text": "捕获了产品的灵魂/核心差异化",
+          "passed": true,
+          "evidence": "'Fast, Focused, Beautiful'"
+        },
+        {
+          "text": "Prompt 描述目的地而非路线",
+          "passed": false,
+          "evidence": "大量精确 CSS 值和技术 spec"
+        },
+        {
+          "text": "每个 prompt 可独立使用",
+          "passed": true,
+          "evidence": "单 prompt 自包含"
+        },
+        {
+          "text": "包含 prompt 使用建议",
+          "passed": false,
+          "evidence": "无使用建议"
+        }
+      ]
+    }
+  }
+}

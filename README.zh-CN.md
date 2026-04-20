@@ -189,17 +189,29 @@ URL     ──┤
 
 ```
 cleaver/
-├── SKILL.md                    # 主技能（180 行）
+├── SKILL.md                    # 主技能（190 行）
 ├── README.md                   # English README
 ├── README.zh-CN.md             # 中文 README（本文件）
 ├── LICENSE                     # MIT
+├── evals/
+│   ├── benchmark.json          # 聚合 eval 结果
+│   ├── rubric.md               # 12 维度评分标准
+│   └── build_benchmark.py      # 读取 grading JSON → 输出 benchmark.json
 ├── docs/
 │   ├── benchmark.svg           # 16 场景对比图
 │   ├── dimensions.svg          # 12 维度对比图
-│   └── generate_charts.py      # 图表生成脚本
+│   └── generate_charts.py      # 读取 benchmark.json → 生成 SVG
 ├── references/
-│   ├── domain-strategies.md    # 10 领域策略
-│   └── prompt-patterns.md      # 12 种 prompt 模式
+│   ├── domains/
+│   │   ├── digital-products.md    # Web/SaaS、Landing Page、Mobile
+│   │   ├── developer-products.md  # CLI、API/Backend
+│   │   ├── creative-systems.md    # Game、Animation、Design System
+│   │   ├── ai-products.md         # AI/ML Products
+│   │   └── physical-services.md   # 实体产品和服务
+│   └── patterns/
+│       ├── build-prompts.md       # 模式 1-6（Intent-first、Spec-driven 等）
+│       ├── product-docs.md        # 模式 7-10（PRD、Design Brief、GDD 等）
+│       └── technical-contracts.md # 模式 11-12（System Prompt、API Contract）
 └── examples/
     ├── stripe-api.md           # API/Backend — 标准构建
     ├── tinder-restaurant.md    # 口头描述 — 快速路径
