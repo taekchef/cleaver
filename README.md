@@ -1,125 +1,104 @@
-<h1 align="center">Cleaver <sup><code>牛刀</code></sup></h1>
+<h1 align="center">Cleaver</h1>
 
-<p align="center"><strong>Take any product, cleave it into the prompts that built it.</strong></p>
+<p align="center"><strong>Take any product. Cleave it into the prompts that built it.</strong></p>
 
 <p align="center">
-  A <a href="https://docs.anthropic.com/en/docs/claude-code/skills">Claude Code skill</a> that reverse-engineers products into actionable prompts for vibe coding, PRDs, design briefs, and service blueprints.
+A <a href="https://docs.anthropic.com/en/docs/claude-code/skills">Claude Code skill</a> that reverse-engineers finished products into buildable prompts.
 </p>
 
 <p align="center">
-  <strong>English</strong> | <a href="./README.zh-CN.md">中文</a>
+<a href="./README.zh-CN.md">中文</a> · <strong>English</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tested-17_scenarios-green" />
-  <img src="https://img.shields.io/badge/dimensions-12-blue" />
-  <img src="https://img.shields.io/badge/with_Cleaver-85%25_pass_rate-brightgreen" />
-  <img src="https://img.shields.io/badge/without-32%25_pass_rate-lightgrey" />
-  <img src="https://img.shields.io/badge/license-MIT-yellow" />
+<img src="https://img.shields.io/badge/scenarios-17-green" />
+<img src="https://img.shields.io/badge/quality_dimensions-12-blue" />
+<img src="https://img.shields.io/badge/pass_rate-85%25-brightgreen" />
+<img src="https://img.shields.io/badge/without-32%25-lightgrey" />
+<img src="https://img.shields.io/badge/license-MIT-yellow" />
 </p>
-
-> Cleaver does not claim to know the original prompts, specs, or internal decisions behind a product.
-> It turns observable product decisions and explicit assumptions into rebuildable prompts.
 
 ---
 
-## Why Cleaver?
+> **Cleaver doesn't read minds.** It reads products.
+> Observable decisions, explicit assumptions, rebuildable prompts.
+> No leaked internals, no claimed secrets.
 
-Vibe coding is powerful, but most people struggle with **writing good prompts**. They either:
-- Write vague prompts ("make a dashboard") → generic output
-- Write over-specified prompts ("use CSS grid with 3 columns...") → fight with the AI
-
-Cleaver solves this by studying products that already work — extracting the **prompts that would have built them**. You learn by reverse-engineering the best.
-
-### Bad prompt vs. Cleaver prompt
+## The problem with "make it like X"
 
 ```
-Bad:
-> Make a dashboard like Linear.
+❌  Make a dashboard like Linear.
 
-Why it fails:
-- Copies surface style but misses speed, keyboard flow, issue triage, and state transitions.
-- No scope boundary, no "done" condition, no soul.
+    → Copies the chrome, misses the engine.
+    → No speed philosophy, no keyboard flow, no soul.
+    → Ship something that looks like Linear but feels like Jira.
 
-Cleaver:
-> Build an issue tracker whose core promise is "nothing slows you down".
-> The first screen is an inbox-like issue list, keyboard-first, with instant command palette,
-> fast status changes, and no modal-heavy editing. Done when a user can create, assign,
-> prioritize, and close an issue without touching the mouse.
-> Do not add roadmap, docs, chat, or analytics yet.
+✅  Build an issue tracker whose promise is "nothing slows you down".
+    Keyboard-first inbox, instant command palette, no modal editing.
+    Done when you can triage 50 issues without reaching for the mouse.
+    Not yet: roadmap, docs, chat, analytics.
 ```
+
+Most vibe coding fails at the prompt, not the code.
+Cleaver studies products that already work — and extracts the prompts that would have built them.
 
 ---
 
-## Proof it works
+## What it cleaves
 
-### 17-Scenario Benchmark
+Give it **anything finished** — it hands you the prompts to rebuild it.
 
-17 test scenarios, graded on up to 12 quality dimensions. Green = with Cleaver, Orange = with Cleaver (new scenarios), Gray = without.
+| Input | Output |
+|-------|--------|
+| Screenshot | Layer-by-layer visual deconstruction → build prompts |
+| URL | Live product analysis → scoped rebuild prompts |
+| Code repo | Architecture extraction → spec + build chain |
+| Verbal description | Product archetype inference → prototype prompts |
+| A single feature | Trigger → change → transition → prompt |
+| A physical object | Sensory + interaction profile → experience spec |
+
+**Output modes** — prompts for vibe coding, PRDs, design briefs, service blueprints, or guided learning.
+
+---
+
+## 17 scenarios. 85% pass rate.
 
 <img src="./docs/benchmark.svg" alt="benchmark comparison chart" width="100%" />
 
-**Key numbers:**
-- With Cleaver: **85%** average pass rate | Without: **32%** | **+53pp improvement**
-- 3 new scenarios scored **100%** with Cleaver (Landing Page, Web App, Remix), Linear re-eval also **100%**
-- Biggest gains: CLI Tool (+78pp), Design System (+67pp), Landing Page / Web App (+67pp)
-
-> Methodology: each scenario was run with and without the skill active, graded by Claude against
-> a 12-dimension rubric covering product analysis, prompt quality, scope control, and teaching value.
-
-### 12 Quality Dimensions
+| Metric | With Cleaver | Without | Delta |
+|--------|-------------|---------|-------|
+| Average pass rate | **85%** | 32% | **+53pp** |
+| Soul capture | 17/17 (100%) | 7/17 (41%) | +59pp |
+| Scope control | 17/17 (100%) | 6/17 (35%) | +65pp |
+| Teaching annotations | 16/17 (94%) | 0/17 (0%) | +94pp |
 
 <img src="./docs/dimensions.svg" alt="dimension coverage chart" width="100%" />
 
-**Where Cleaver adds the most:**
-
-| Dimension | With Cleaver | Without | Gap |
-|-----------|-------------|---------|-----|
-| Why Annotations (teaching) | 16/17 (94%) | 0/17 (0%) | **+94pp** |
-| Not-To-Do (scope control) | 17/17 (100%) | 6/17 (35%) | **+65pp** |
-| Done Criteria (acceptance) | 9/17 (53%) | 0/17 (0%) | **+53pp** |
-| Pro Tips (practical insight) | 13/17 (76%) | 3/17 (18%) | **+59pp** |
-| Build Order (sequencing) | 11/17 (65%) | 1/17 (6%) | **+59pp** |
-| Soul Capture (core identity) | 17/17 (100%) | 7/17 (41%) | **+59pp** |
-| Destination Not Route * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
-| Usage Guidance * | 4/4 (100%) | 0/4 (0%) | **+100pp** |
-
-*\* New dimensions, tested on 3 additional scenarios*
+> Each scenario graded on 12 dimensions: product analysis, prompt quality, scope control, build order, domain framework, teaching value, and more. Full rubric in [`evals/rubric.md`](evals/rubric.md).
 
 ---
 
-## What it does
+## Four paths. Pick your depth.
 
-Give Cleaver **any product** — a screenshot, a URL, a code repo, a verbal description, even a physical object — and it will:
+| Path | Prompts | Time | When |
+|------|---------|------|------|
+| **Minimal** | 1 (2-3 sentences) | instant | "Just the soul" |
+| **Fast Track** | 2-3 | ~30 min | "Ship something tonight" |
+| **Standard Build** | 5-8 | hours | "Rebuild the whole thing" |
+| **Learning Deep-Dive** | 5-10 (annotated) | hours | "Teach me to think in prompts" |
 
-1. **Analyze** the product's architecture, design decisions, and soul (separating observed facts from inferred intent)
-2. **Deconstruct** it into layers (foundation, structure, visual, interaction, data)
-3. **Generate** copy-paste-ready prompts you can use to recreate or learn from it
+Every path (except Minimal) starts with **Prompt 0** — a foundation prompt that establishes project DNA (stack, structure, conventions, done condition) so every subsequent prompt builds instead of re-establishing context.
 
-It adapts to **what you want**:
-- Vibe coding prompts (build it)
-- PRD prompts (spec it)
-- Design briefs (design it)
-- Service blueprints (operate it)
-- Learning material (understand it)
+---
 
-## 5 Paths
-
-| Path | Prompts | Time | Best for | Prompt 0? |
-|------|---------|------|----------|-----------|
-| **Minimal** | 1 (2-3 sentences) | instant | "Just give me the soul" | No |
-| **Fast Track** | 2-3 | ~30 min | "I want something working now" | Yes |
-| **Standard Build** | 5-8 | hours | "I want to recreate this" | Yes |
-| **Learning Deep-Dive** | 5-10 (annotated) | hours | "Teach me how to think in prompts" | Yes |
-
-## 10 Domains
+## Ten domains. Ten frameworks.
 
 | | | | | |
 |---|---|---|---|---|
 | Web App / SaaS | Mobile App | Landing Page | Animation | CLI Tool |
 | Design System | Game | API / Backend | AI Product | Service / Physical |
 
-Each domain has its own analysis framework — games use MDA, APIs use contract-driven design, AI products use system prompt architecture, services use blueprint methodology.
+Games get MDA analysis. APIs get contract-driven decomposition. AI products get system prompt architecture. Every domain has its own lens — one framework doesn't fit all.
 
 ---
 
@@ -129,7 +108,7 @@ Each domain has its own analysis framework — games use MDA, APIs use contract-
 npx skills add taekchef/cleaver
 ```
 
-Then in Claude Code, just say what you want to deconstruct:
+Then just describe what you want to deconstruct:
 
 ```
 > 拆解 Stripe 的 API 设计理念
@@ -138,13 +117,11 @@ Then in Claude Code, just say what you want to deconstruct:
 > Break down the iOS delete-app wiggle animation
 ```
 
+---
+
 ## Examples
 
-### Bad prompt vs Cleaver prompt — Linear
-
-See the full comparison: [Bad vs Cleaver — Linear](examples/bad-vs-cleaver-linear.md)
-
-### Minimal Path — Notion (3 sentences)
+### Minimal — Notion in 3 sentences
 
 ```
 做一个"万物皆 block"的工作空间：每一段文字、每一张图、每一行数据库都是同一颗原子积木，
@@ -154,96 +131,83 @@ See the full comparison: [Bad vs Cleaver — Linear](examples/bad-vs-cleaver-lin
 不要做固定模板的 SaaS，要做用户自己造工具的平台——Notion 卖的不是功能，是"你可以自己搭"的创造力。
 ```
 
-### Fast Track — "Tinder for restaurants" (verbal-only, 3 prompts)
+### Fast Track — Wordle (3 prompts, MDA framework)
 
-User says: "全屏卡片左右滑选餐厅" — Cleaver infers the product archetype, identifies it as a "decision fatigue killer", and generates a Foundation Prompt + 2 feature prompts for a React Native swipe-card app.
-
-→ [Full output](examples/tinder-restaurant.md)
-
-### Standard Build — Stripe API (6 prompts)
-
-Full API design teardown: philosophy, data model, API surface (CRUD five-tuple, cursor pagination, expand), operational contracts (idempotency, webhook signatures), error model (three-layer classification with doc_url), and developer experience design.
-
-→ [Full output](examples/stripe-api.md)
-
-### Fast Track — Wordle (3 prompts)
-
-Game deconstruction using MDA framework: identifies "one sentence to explain rules" as the soul, deconstructs into Foundation (grid + keyboard) → Core game logic (guess + feedback with duplicate-letter edge cases) → Animation + Share (the social viral engine).
+Soul: "one sentence explains the rules". Foundation (grid + keyboard) → Game logic (with duplicate-letter edge cases) → Animation + Share (the viral engine).
 
 → [Full output](examples/wordle-game.md)
 
-### Learning Deep-Dive — Perplexity (6 prompts, annotated)
+### Standard Build — Stripe API (6 prompts)
 
-AI product deconstruction with system prompt architecture: identifies "every answer has evidence" as the soul, builds RAG pipeline → search UI → citation interaction → follow-up threads → polish. Each prompt explains why it works — this path teaches prompt thinking.
+Philosophy → Data model → API surface (CRUD, cursor pagination, expand) → Operational contracts (idempotency, webhook signatures) → Error model (three-layer classification) → Developer experience.
+
+→ [Full output](examples/stripe-api.md)
+
+### Learning Deep-Dive — Perplexity (6 annotated prompts)
+
+AI product deconstruction with system prompt architecture. Soul: "every answer has evidence". Each prompt comes with a "why this works" annotation.
 
 → [Full output](examples/perplexity-ai-product.md)
+
+### Fast Track — "Tinder for restaurants" (verbal-only, 3 prompts)
+
+User says one sentence — Cleaver infers the product archetype, identifies "decision fatigue killer", and builds.
+
+→ [Full output](examples/tinder-restaurant.md)
 
 ---
 
 ## How it works
 
 ```
-Input                Analysis              Output
-─────────────────────────────────────────────────────
-Screenshot  ──┐
-URL          ──┤
-Code/repo    ──┼──► Phase 1: Understand ──► Phase 3: Deconstruct
-Verbal desc  ──┤    Phase 2: What user    (6-layer framework +
-Design file  ──┤             wants         domain overrides)
-Physical obj ──┘    (infer, don't ask)
-                                         ► Phase 4: Write prompts
-                                           (12 prompt patterns)
-                                         ► Quality Gate (path-specific)
+Anything  ──►  Read the product  ──►  Cleave into layers  ──►  Write prompts
+finished       (observe + infer)      (6-layer framework,      (12 prompt patterns,
+                                      domain-specific)         path-specific gate)
 ```
 
-**12 prompt patterns**: Intent-first, Spec-driven, Iterative chain, Not-to-dos, Example-driven, Test-first, PRD generator, Design brief, Experience-to-Spec, GDD generator, System prompt, API contract. See [`references/patterns/build-prompts.md`](references/patterns/build-prompts.md), [`product-docs.md`](references/patterns/product-docs.md), [`technical-contracts.md`](references/patterns/technical-contracts.md).
+**12 prompt patterns** across three categories:
+
+| Build prompts | Product docs | Technical contracts |
+|---|---|---|
+| Intent-first | PRD generator | System prompt |
+| Spec-driven | Design brief | API contract |
+| Iterative chain | Experience-to-Spec | |
+| Not-to-dos | GDD generator | |
+| Example-driven | | |
+| Test-first | | |
+
+→ [`references/patterns/build-prompts.md`](references/patterns/build-prompts.md) · [`product-docs.md`](references/patterns/product-docs.md) · [`technical-contracts.md`](references/patterns/technical-contracts.md)
+
+---
 
 ## Architecture
 
 ```
 cleaver/
-├── SKILL.md                    # Main skill (190 lines)
-├── README.md                   # This file
-├── README.zh-CN.md             # Chinese README
-├── LICENSE                     # MIT
+├── SKILL.md                          # The skill itself (~195 lines)
 ├── evals/
-│   ├── benchmark.json          # Aggregated eval results
-│   ├── rubric.md               # 12-dimension scoring criteria
-│   └── build_benchmark.py      # Reads grading JSONs, outputs benchmark.json
+│   ├── rubric.md                     # 12-dimension grading criteria
+│   ├── benchmark.json                # Aggregated results
+│   └── build_benchmark.py            # Eval → benchmark pipeline
 ├── docs/
-│   ├── benchmark.svg           # 17-scenario comparison chart
-│   ├── dimensions.svg          # 12-dimension coverage chart
-│   └── generate_charts.py      # Reads benchmark.json → generates SVGs
+│   ├── benchmark.svg                 # Scenario comparison chart
+│   ├── dimensions.svg                # Dimension coverage chart
+│   └── generate_charts.py            # Benchmark → SVG pipeline
 ├── references/
-│   ├── domains/
-│   │   ├── digital-products.md    # Web/SaaS, Landing Page, Mobile
-│   │   ├── developer-products.md  # CLI, API/Backend
-│   │   ├── creative-systems.md    # Game, Animation, Design System
-│   │   ├── ai-products.md         # AI/ML Products
-│   │   └── physical-services.md   # Physical products & services
-│   └── patterns/
-│       ├── build-prompts.md       # Patterns 1-6 (Intent-first, Spec-driven, etc.)
-│       ├── product-docs.md        # Patterns 7-10 (PRD, Design Brief, GDD, etc.)
-│       └── technical-contracts.md # Patterns 11-12 (System Prompt, API Contract)
-└── examples/
-    ├── bad-vs-cleaver-linear.md  # Bad vs Cleaver comparison
-    ├── stripe-api.md           # API/Backend — Standard Build
-    ├── tinder-restaurant.md    # Verbal-only — Fast Track
-    └── notion-minimal.md       # Minimal Path — 3 sentences
-    └── wordle-game.md         # Game — Fast Track
+│   ├── domains/                      # 10 domain-specific strategies
+│   └── patterns/                     # 12 prompt pattern references
+└── examples/                         # Real teardown outputs
 ```
 
 ---
 
-## Responsible Use
+## Responsible use
 
-Cleaver is for learning, inspiration, legitimate remixing, and product understanding.
-Do not use it to copy proprietary assets, impersonate brands, bypass access controls,
-or clone products in ways that violate licenses, terms, or user trust.
+For learning, inspiration, and legitimate remixing.
+Not for copying proprietary assets, impersonating brands, or bypassing access controls.
 
-When remixing a real product, preserve the lesson, not the identity.
-Extract patterns, interaction principles, and architectural decisions —
-avoid copying names, branding, proprietary content, or private implementation details.
+**Preserve the lesson, not the identity.**
+Extract patterns and principles — avoid copying names, branding, or proprietary implementation.
 
 ---
 
